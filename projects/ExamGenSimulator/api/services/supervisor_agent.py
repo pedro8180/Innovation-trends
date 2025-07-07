@@ -1,1 +1,1 @@
-print("Hello world!")
+from langchain_supervisor import create_supervisor
