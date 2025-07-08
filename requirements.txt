@@ -1,3 +1,6 @@
 langgraph-supervisor
 langchain-openai
 python-dotenv
+beautifulsoup4
+langchain_community
+scrapingant-client
