@@ -1,1 +1,1 @@
-from langchain_supervisor import create_supervisor
+from langgraph_supervisor import create_supervisor

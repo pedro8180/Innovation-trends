@@ -5,3 +5,4 @@ beautifulsoup4
 langchain_community
 scrapingant-client
 pymongo
+fastapi
