@@ -1,8 +1,16 @@
 from fastapi import APIRouter
-from services.question_generator_agent import hello
+from services.supervisor_agent import SupervisorAgent
 router = APIRouter()
 
-@router.post("/generate")
-async def call_dummy():
+@router.post("/agents")
+async def call_supervisor_agent():
 
-    return hello()
+    agent = SupervisorAgent.create_supervisor_agent()
+
+    query = "Give me a set of questions for practicing for my certification exam."
+
+    messages = {"messages": [{"role":"user", "content": query}]}
+
+    response = agent.invoke(messages)
+    
+    return response['messages']
