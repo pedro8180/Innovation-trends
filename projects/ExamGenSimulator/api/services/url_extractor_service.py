@@ -98,11 +98,11 @@ def scrape_course_modules_units_and_topics(course_url, api_key):
                     'url': topic_url
                 })
 
-                units.append({
-                    'name': unit_name,
-                    'url': unit_url,
-                    'topics': topics
-                })
+            units.append({
+                'name': unit_name,
+                'url': unit_url,
+                'topics': topics
+            })
 
         output['modules'].append({
             'name': module_name,
