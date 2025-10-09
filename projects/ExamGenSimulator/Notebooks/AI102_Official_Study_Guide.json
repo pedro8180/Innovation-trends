@@ -1,0 +1,564 @@
+{
+  "exam_info": {
+    "certification": "Microsoft AI-102",
+    "exam_title": "Designing and Implementing a Microsoft Azure AI Solution",
+    "last_updated": "2025-10-02T11:42:06.862272",
+    "sources": [
+      "Microsoft Learn Official Study Guide",
+      "Azure Documentation"
+    ]
+  },
+  "official_objectives": [
+    {
+      "title": "Skills at a glance",
+      "content": "Plan and manage an Azure AI solution (2025) Implement generative AI solutions (1520) Implement an agentic solution (510) Implement computer vision solutions (1015) Implement natural language processing solutions (1520) Implement knowledge mining and information extraction solutions (1520)",
+      "importance": "high"
+    }
+  ],
+  "skill_areas": [],
+  "key_topics": [
+    {
+      "topic": "Requirements definition and design",
+      "category": "General"
+    },
+    {
+      "topic": "Development",
+      "category": "General"
+    },
+    {
+      "topic": "Integration",
+      "category": "General"
+    },
+    {
+      "topic": "Maintenance",
+      "category": "General"
+    },
+    {
+      "topic": "Performance tuning",
+      "category": "General"
+    },
+    {
+      "topic": "Plan and manage an Azure AI solution (2025)",
+      "category": "General"
+    },
+    {
+      "topic": "Implement generative AI solutions (1520)",
+      "category": "General"
+    },
+    {
+      "topic": "Implement an agentic solution (510)",
+      "category": "General"
+    },
+    {
+      "topic": "Implement computer vision solutions (1015)",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Implement natural language processing solutions (1520)",
+      "category": "Language Understanding"
+    },
+    {
+      "topic": "Implement knowledge mining and information extraction solutions (1520)",
+      "category": "General"
+    },
+    {
+      "topic": "Select the appropriate service for a generative AI solution",
+      "category": "General"
+    },
+    {
+      "topic": "Select the appropriate service for a computer vision solution",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Select the appropriate service for a natural language processing solution",
+      "category": "Language Understanding"
+    },
+    {
+      "topic": "Select the appropriate service for a speech solution",
+      "category": "Speech Services"
+    },
+    {
+      "topic": "Select the appropriate service for an information extraction solution",
+      "category": "General"
+    },
+    {
+      "topic": "Select the appropriate service for a knowledge mining solution",
+      "category": "General"
+    },
+    {
+      "topic": "Plan for a solution that meets Responsible AI principles",
+      "category": "General"
+    },
+    {
+      "topic": "Create an Azure AI resource",
+      "category": "General"
+    },
+    {
+      "topic": "Choose the appropriate AI models for your solution",
+      "category": "General"
+    },
+    {
+      "topic": "Deploy AI models using the appropriate deployment options",
+      "category": "General"
+    },
+    {
+      "topic": "Install and utilize the appropriate SDKs and APIs",
+      "category": "Cognitive Services"
+    },
+    {
+      "topic": "Determine a default endpoint for a service",
+      "category": "Cognitive Services"
+    },
+    {
+      "topic": "Integrate Azure AI Foundry Services into a continuous integration and continuous delivery (CI/CD) pipeline",
+      "category": "General"
+    },
+    {
+      "topic": "Plan and implement a container deployment",
+      "category": "General"
+    },
+    {
+      "topic": "Monitor an Azure AI resource",
+      "category": "General"
+    },
+    {
+      "topic": "Manage costs for Azure AI Foundry Services",
+      "category": "General"
+    },
+    {
+      "topic": "Manage and protect account keys",
+      "category": "Cognitive Services"
+    },
+    {
+      "topic": "Manage authentication for an Azure AI Foundry Service resource",
+      "category": "General"
+    },
+    {
+      "topic": "Implement content moderation solutions",
+      "category": "General"
+    },
+    {
+      "topic": "Configure responsible AI insights, including content safety",
+      "category": "General"
+    },
+    {
+      "topic": "Implement responsible AI, including content filters and blocklists",
+      "category": "General"
+    },
+    {
+      "topic": "Prevent harmful behavior, including prompt shields and harm detection",
+      "category": "General"
+    },
+    {
+      "topic": "Design a responsible AI governance framework",
+      "category": "General"
+    },
+    {
+      "topic": "Plan and prepare for a generative AI solution",
+      "category": "General"
+    },
+    {
+      "topic": "Deploy a hub, project, and necessary resources with Azure AI Foundry",
+      "category": "General"
+    },
+    {
+      "topic": "Deploy the appropriate generative AI model for your use case",
+      "category": "General"
+    },
+    {
+      "topic": "Implement a prompt flow solution",
+      "category": "General"
+    },
+    {
+      "topic": "Implement a RAG pattern by grounding a model in your data",
+      "category": "General"
+    },
+    {
+      "topic": "Evaluate models and flows",
+      "category": "General"
+    },
+    {
+      "topic": "Integrate your project into an application with Azure AI Foundry SDK",
+      "category": "General"
+    },
+    {
+      "topic": "Utilize prompt templates in your generative AI solution",
+      "category": "General"
+    },
+    {
+      "topic": "Provision an Azure OpenAI in Foundry Models resource",
+      "category": "Azure OpenAI"
+    },
+    {
+      "topic": "Select and deploy an Azure OpenAI model",
+      "category": "Azure OpenAI"
+    },
+    {
+      "topic": "Submit prompts to generate code and natural language responses",
+      "category": "Language Understanding"
+    },
+    {
+      "topic": "Use the DALL-E model to generate images",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Integrate Azure OpenAI into your own application",
+      "category": "Azure OpenAI"
+    },
+    {
+      "topic": "Use large multimodal models in Azure OpenAI",
+      "category": "Azure OpenAI"
+    },
+    {
+      "topic": "Implement an Azure OpenAI Assistant",
+      "category": "Azure OpenAI"
+    },
+    {
+      "topic": "Configure parameters to control generative behavior",
+      "category": "General"
+    },
+    {
+      "topic": "Configure model monitoring and diagnostic settings, including performance and resource consumption",
+      "category": "General"
+    },
+    {
+      "topic": "Optimize and manage resources for deployment, including scalability and foundational model updates",
+      "category": "General"
+    },
+    {
+      "topic": "Enable tracing and collect feedback",
+      "category": "General"
+    },
+    {
+      "topic": "Implement model reflection",
+      "category": "General"
+    },
+    {
+      "topic": "Deploy containers for use on local and edge devices",
+      "category": "General"
+    },
+    {
+      "topic": "Implement orchestration of multiple generative AI models",
+      "category": "General"
+    },
+    {
+      "topic": "Apply prompt engineering techniques to improve responses",
+      "category": "General"
+    },
+    {
+      "topic": "Fine-tune an generative model",
+      "category": "General"
+    },
+    {
+      "topic": "Understand the role and use cases of an agent",
+      "category": "General"
+    },
+    {
+      "topic": "Configure the necessary resources to build an agent",
+      "category": "General"
+    },
+    {
+      "topic": "Create an agent with the Azure AI Foundry Agent Service",
+      "category": "General"
+    },
+    {
+      "topic": "Implement complex agents with Semantic Kernel and Autogen",
+      "category": "General"
+    },
+    {
+      "topic": "Implement complex workflows including orchestration for a multi-agent solution, multiple users, and autonomous capabilities",
+      "category": "General"
+    },
+    {
+      "topic": "Test, optimize and deploy an agent",
+      "category": "General"
+    },
+    {
+      "topic": "Select visual features to meet image processing requirements",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Detect objects in images and generate image tags",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Include image analysis features in an image processing request",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Interpret image processing responses",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Extract text from images using Azure AI Vision",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Convert handwritten text using Azure AI Vision",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Choose between image classification and object detection models",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Label images",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Train a custom image model, including image classification and object detection",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Evaluate custom vision model metrics",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Publish a custom vision model",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Consume a custom vision model",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Build a custom vision model code first",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Extract key phrases and entities",
+      "category": "Cognitive Services"
+    },
+    {
+      "topic": "Determine sentiment of text",
+      "category": "General"
+    },
+    {
+      "topic": "Detect the language used in text",
+      "category": "Language Understanding"
+    },
+    {
+      "topic": "Detect personally identifiable information (PII) in text",
+      "category": "General"
+    },
+    {
+      "topic": "Translate text and documents by using the Azure AI Translator service",
+      "category": "General"
+    },
+    {
+      "topic": "Integrate generative AI speaking capabilities in an application",
+      "category": "General"
+    },
+    {
+      "topic": "Implement text-to-speech and speech-to-text using Azure AI Speech",
+      "category": "Speech Services"
+    },
+    {
+      "topic": "Improve text-to-speech by using Speech Synthesis Markup Language (SSML)",
+      "category": "Speech Services"
+    },
+    {
+      "topic": "Implement custom speech solutions with Azure AI Speech",
+      "category": "Speech Services"
+    },
+    {
+      "topic": "Implement intent and keyword recognition with Azure AI Speech",
+      "category": "Speech Services"
+    },
+    {
+      "topic": "Translate speech-to-speech and speech-to-text by using the Azure AI Speech service",
+      "category": "Speech Services"
+    },
+    {
+      "topic": "Create intents, entities, and add utterances",
+      "category": "Language Understanding"
+    },
+    {
+      "topic": "Train, evaluate, deploy, and test a language understanding model",
+      "category": "Language Understanding"
+    },
+    {
+      "topic": "Optimize, backup, and recover language understanding model",
+      "category": "Language Understanding"
+    },
+    {
+      "topic": "Consume a language model from a client application",
+      "category": "Language Understanding"
+    },
+    {
+      "topic": "Create a custom question answering project",
+      "category": "General"
+    },
+    {
+      "topic": "Add question-and-answer pairs and import sources for question answering",
+      "category": "General"
+    },
+    {
+      "topic": "Train, test, and publish a knowledge base",
+      "category": "General"
+    },
+    {
+      "topic": "Create a multi-turn conversation",
+      "category": "Bot Framework"
+    },
+    {
+      "topic": "Add alternate phrasing and chit-chat to a knowledge base",
+      "category": "General"
+    },
+    {
+      "topic": "Export a knowledge base",
+      "category": "General"
+    },
+    {
+      "topic": "Create a multi-language question answering solution",
+      "category": "Language Understanding"
+    },
+    {
+      "topic": "Implement custom translation, including training, improving, and publishing a custom model",
+      "category": "General"
+    },
+    {
+      "topic": "Provision an Azure AI Search resource, create an index, and define a skillset",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Create data sources and indexers",
+      "category": "General"
+    },
+    {
+      "topic": "Implement custom skills and include them in a skillset",
+      "category": "General"
+    },
+    {
+      "topic": "Create and run an indexer",
+      "category": "General"
+    },
+    {
+      "topic": "Query an index, including syntax, sorting, filtering, and wildcards",
+      "category": "General"
+    },
+    {
+      "topic": "Manage Knowledge Store projections, including file, object, and table projections",
+      "category": "General"
+    },
+    {
+      "topic": "Implement semantic and vector store solutions",
+      "category": "General"
+    },
+    {
+      "topic": "Provision a Document Intelligence resource",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Use prebuilt models to extract data from documents",
+      "category": "General"
+    },
+    {
+      "topic": "Implement a custom document intelligence model",
+      "category": "General"
+    },
+    {
+      "topic": "Train, test, and publish a custom document intelligence model",
+      "category": "General"
+    },
+    {
+      "topic": "Create a composed document intelligence model",
+      "category": "General"
+    },
+    {
+      "topic": "Create an OCR pipeline to extract text from images and documents",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Summarize, classify, and detect attributes of documents",
+      "category": "General"
+    },
+    {
+      "topic": "Extract entities, tables, and images from documents",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "Process and ingest documents, images, videos, and audio with Azure AI Content Understanding",
+      "category": "Computer Vision"
+    },
+    {
+      "topic": "High contrast",
+      "category": "General"
+    },
+    {
+      "topic": "AI Disclaimer",
+      "category": "General"
+    },
+    {
+      "topic": "Previous Versions",
+      "category": "General"
+    },
+    {
+      "topic": "Terms of Use",
+      "category": "General"
+    },
+    {
+      "topic": "Microsoft 2025",
+      "category": "General"
+    }
+  ],
+  "study_sections": [],
+  "azure_services": {
+    "ai_services": [
+      "Azure OpenAI",
+      "Cognitive Services",
+      "Azure AI Search"
+    ],
+    "machine_learning": [
+      "Azure Machine Learning",
+      "Azure Databricks"
+    ],
+    "data_services": [
+      "Azure SQL Database",
+      "Cosmos DB",
+      "Azure Data Factory"
+    ],
+    "compute": [
+      "Azure Functions",
+      "Container Instances",
+      "Kubernetes Service"
+    ]
+  },
+  "terminology": {
+    "ai_concepts": [
+      "Large Language Models",
+      "Embeddings",
+      "Prompt Engineering",
+      "Fine-tuning"
+    ],
+    "azure_concepts": [
+      "Resource Groups",
+      "Managed Identity",
+      "Private Endpoints",
+      "RBAC"
+    ],
+    "exam_keywords": [
+      "Deploy",
+      "Configure",
+      "Monitor",
+      "Optimize",
+      "Secure"
+    ]
+  },
+  "study_recommendations": {
+    "focus_areas": [
+      "Azure OpenAI Service implementation and configuration",
+      "Computer Vision API integration",
+      "Speech Services and Language Understanding",
+      "Responsible AI principles and governance",
+      "Performance optimization and monitoring"
+    ],
+    "hands_on_labs": [
+      "Deploy Azure OpenAI models",
+      "Build custom vision solutions",
+      "Implement speech-to-text applications",
+      "Create chatbots with Bot Framework",
+      "Monitor AI workloads with Application Insights"
+    ]
+  }
+}

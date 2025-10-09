@@ -1,0 +1,166 @@
+/* Avanade Color Palette */
+:root {
+  /* Primary Colors */
+  --avanade-orange: #FF6600;
+  --avanade-dark-orange: #E55A00;
+  
+  /* Gradients */
+  --gradient-solar: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
+  --gradient-luminous: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  --gradient-glow: linear-gradient(135deg, #FF8C00 0%, #FF6600 100%);
+  --gradient-flame: linear-gradient(135deg, #FF6600 0%, #FF4500 100%);
+  --gradient-thermal: linear-gradient(135deg, #FF4500 0%, #DC143C 100%);
+  --gradient-aurora: linear-gradient(135deg, #FF4500 0%, #8B008B 100%);
+  
+  /* Secondary Colors */
+  --avanade-scarlet: #B91C1C;
+  --avanade-dark-scarlet: #991B1B;
+  --avanade-gold: #F59E0B;
+  --avanade-dark-gold: #D97706;
+  --avanade-pink: #EC4899;
+  --avanade-dark-pink: #DB2777;
+  --avanade-purple: #8B5CF6;
+  --avanade-dark-purple: #7C3AED;
+  --avanade-green: #10B981;
+  --avanade-dark-green: #059669;
+  --avanade-aqua: #06B6D4;
+  --avanade-dark-aqua: #0891B2;
+  --avanade-blue: #3B82F6;
+  --avanade-dark-blue: #2563EB;
+  
+  /* Neutral Colors */
+  --gray-50: #F9FAFB;
+  --gray-100: #F3F4F6;
+  --gray-200: #E5E7EB;
+  --gray-300: #D1D5DB;
+  --gray-400: #9CA3AF;
+  --gray-500: #6B7280;
+  --gray-600: #4B5563;
+  --gray-700: #374151;
+  --gray-800: #1F2937;
+  --gray-900: #111827;
+  
+  /* Semantic Colors */
+  --success: var(--avanade-green);
+  --warning: var(--avanade-gold);
+  --error: var(--avanade-scarlet);
+  --info: var(--avanade-blue);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--gradient-luminous);
+  min-height: 100vh;
+  color: var(--gray-800);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--avanade-orange);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--avanade-dark-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+}
+
+.btn-secondary {
+  background: var(--gray-200);
+  color: var(--gray-700);
+}
+
+.btn-secondary:hover {
+  background: var(--gray-300);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.text-primary {
+  color: var(--avanade-orange);
+}
+
+.text-secondary {
+  color: var(--gray-600);
+}
+
+.text-muted {
+  color: var(--gray-500);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
