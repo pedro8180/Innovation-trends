@@ -1,0 +1,983 @@
+{
+    "course": "Course DP-700T00-A: Microsoft Fabric Data Engineer - Training",
+    "modules": [
+        {
+            "name": "Ingest Data with Microsoft Fabric - Training",
+            "url": "https://learn.microsoft.com/en-us/training/paths/ingest-data-with-microsoft-fabric",
+            "units": [
+                {
+                    "name": "Ingest Data with Dataflows Gen2 in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Understand Dataflows Gen2 in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/2-dataflows-gen-2"
+                        },
+                        {
+                            "name": "Explore Dataflows Gen2 in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/3-explore-dataflows-gen-2"
+                        },
+                        {
+                            "name": "Integrate Dataflows Gen2 and Pipelines in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/4-dataflow-pipeline"
+                        },
+                        {
+                            "name": "Exercise - Create and use a Dataflow Gen2 in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/5-exercise"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Orchestrate processes and data movement with Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Understand pipelines",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/2-understand-fabric-pipeline"
+                        },
+                        {
+                            "name": "Use the Copy Data activity",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/3-copy-data"
+                        },
+                        {
+                            "name": "Use pipeline templates",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/4-pipeline-templates"
+                        },
+                        {
+                            "name": "Run and monitor pipelines",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/5-run-monitor-pipelines"
+                        },
+                        {
+                            "name": "Exercise - Ingest data with a pipeline",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/6-exercise-pipelines"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/7-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/8-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Use Apache Spark in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/1-introduction"
+                        },
+                        {
+                            "name": "Prepare to use Apache Spark",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/2-spark"
+                        },
+                        {
+                            "name": "Run Spark code",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/3-spark-code"
+                        },
+                        {
+                            "name": "Work with data in a Spark dataframe",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/4-dataframe"
+                        },
+                        {
+                            "name": "Work with data using Spark SQL",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/5-spark-sql"
+                        },
+                        {
+                            "name": "Visualize data in a Spark notebook",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/6-visualize-data"
+                        },
+                        {
+                            "name": "Exercise - Analyze data with Apache Spark",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/7-exercise-spark"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/8-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/9-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Work with real-time data in an Eventhouse in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Get started with an Eventhouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/2-get-started-with-kql-queries"
+                        },
+                        {
+                            "name": "Use KQL effectively",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/3-kql-best-practices"
+                        },
+                        {
+                            "name": "Materialized views and stored functions",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/4-advanced-features"
+                        },
+                        {
+                            "name": "Exercise - Work with data in an Eventhouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/5-exercise"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/7-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Implement a Lakehouse with Microsoft Fabric - Training",
+            "url": "https://learn.microsoft.com/en-us/training/paths/implement-lakehouse-microsoft-fabric",
+            "units": [
+                {
+                    "name": "Introduction to end-to-end analytics using Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Explore end-to-end analytics with Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/2-explore-analytics-fabric"
+                        },
+                        {
+                            "name": "Explore data teams and Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/3-data-team"
+                        },
+                        {
+                            "name": "Enable and use Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/4-use-fabric"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/5-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/6-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get started with lakehouses in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-lakehouses/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-lakehouses/1-introduction"
+                        },
+                        {
+                            "name": "Explore the Microsoft Fabric lakehouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-lakehouses/2-fabric-lakehouse"
+                        },
+                        {
+                            "name": "Work with Microsoft Fabric lakehouses",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-lakehouses/3-work-lakehouse"
+                        },
+                        {
+                            "name": "Explore and transform data in a lakehouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-lakehouses/4-explore-data-lakehouse"
+                        },
+                        {
+                            "name": "Exercise - Create a Microsoft Fabric lakehouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-lakehouses/5-exercise-lakehouse"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-lakehouses/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-lakehouses/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Use Apache Spark in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/1-introduction"
+                        },
+                        {
+                            "name": "Prepare to use Apache Spark",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/2-spark"
+                        },
+                        {
+                            "name": "Run Spark code",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/3-spark-code"
+                        },
+                        {
+                            "name": "Work with data in a Spark dataframe",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/4-dataframe"
+                        },
+                        {
+                            "name": "Work with data using Spark SQL",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/5-spark-sql"
+                        },
+                        {
+                            "name": "Visualize data in a Spark notebook",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/6-visualize-data"
+                        },
+                        {
+                            "name": "Exercise - Analyze data with Apache Spark",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/7-exercise-spark"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/8-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-apache-spark-work-files-lakehouse/9-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Work with Delta Lake tables in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Understand Delta Lake",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/2-understand-delta-lake"
+                        },
+                        {
+                            "name": "Create delta tables",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/3-create-delta-tables"
+                        },
+                        {
+                            "name": "Optimize delta tables",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/3b-optimize-delta-tables"
+                        },
+                        {
+                            "name": "Work with delta tables in Spark",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/4-work-delta-data"
+                        },
+                        {
+                            "name": "Use delta tables with streaming data",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/5-use-delta-lake-streaming-data"
+                        },
+                        {
+                            "name": "Exercise - Use delta tables in Apache Spark",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/6-exercise-delta-tables"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/7-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/work-delta-lake-tables-fabric/8-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ingest Data with Dataflows Gen2 in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Understand Dataflows Gen2 in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/2-dataflows-gen-2"
+                        },
+                        {
+                            "name": "Explore Dataflows Gen2 in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/3-explore-dataflows-gen-2"
+                        },
+                        {
+                            "name": "Integrate Dataflows Gen2 and Pipelines in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/4-dataflow-pipeline"
+                        },
+                        {
+                            "name": "Exercise - Create and use a Dataflow Gen2 in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/5-exercise"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-dataflow-gen-2-fabric/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Orchestrate processes and data movement with Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Understand pipelines",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/2-understand-fabric-pipeline"
+                        },
+                        {
+                            "name": "Use the Copy Data activity",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/3-copy-data"
+                        },
+                        {
+                            "name": "Use pipeline templates",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/4-pipeline-templates"
+                        },
+                        {
+                            "name": "Run and monitor pipelines",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/5-run-monitor-pipelines"
+                        },
+                        {
+                            "name": "Exercise - Ingest data with a pipeline",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/6-exercise-pipelines"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/7-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-data-factory-pipelines-fabric/8-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Organize a Fabric lakehouse using medallion architecture design",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/describe-medallion-architecture/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/describe-medallion-architecture/1-introduction"
+                        },
+                        {
+                            "name": "Describe medallion architecture",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/describe-medallion-architecture/2-describe-medallion-architecture"
+                        },
+                        {
+                            "name": "Implement a medallion architecture in Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/describe-medallion-architecture/3-implement-medallion-archecture-fabric"
+                        },
+                        {
+                            "name": "Query and report on data in your Fabric lakehouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/describe-medallion-architecture/4-query-report-data"
+                        },
+                        {
+                            "name": "Considerations for managing your lakehouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/describe-medallion-architecture/5-secure-govern"
+                        },
+                        {
+                            "name": "Exercise - Organize your Fabric lakehouse using a medallion architecture",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/describe-medallion-architecture/6-exercise"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/describe-medallion-architecture/7-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/describe-medallion-architecture/8-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Implement Real-Time Intelligence with Microsoft Fabric DP-603T00 - Training",
+            "url": "https://learn.microsoft.com/en-us/training/paths/explore-real-time-analytics-microsoft-fabric",
+            "units": [
+                {
+                    "name": "Get started with Real-Time Intelligence in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-kusto-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-kusto-fabric/1-introduction"
+                        },
+                        {
+                            "name": "What is real-time data analytics?",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-kusto-fabric/2-define-real-time-analytics"
+                        },
+                        {
+                            "name": "Real-Time Intelligence in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-kusto-fabric/3-describe-kusto-databases-tables"
+                        },
+                        {
+                            "name": "Ingest and transform real-time data",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-kusto-fabric/3a-define-real-time-hub"
+                        },
+                        {
+                            "name": "Store and query real-time data",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-kusto-fabric/4-write-queries-kusto-query-language"
+                        },
+                        {
+                            "name": "Visualize real-time data",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-kusto-fabric/4b-visualize-data"
+                        },
+                        {
+                            "name": "Automate actions",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-kusto-fabric/4c-activator"
+                        },
+                        {
+                            "name": "Exercise - Explore Real-Time Intelligence in Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-kusto-fabric/5-exercise-use-kusto-query-data-onelake"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-kusto-fabric/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-kusto-fabric/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Use Eventstream in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/explore-event-streams-microsoft-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/explore-event-streams-microsoft-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Components of Eventstream",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/explore-event-streams-microsoft-fabric/2-eventstream-components"
+                        },
+                        {
+                            "name": "Eventstream sources and destinations",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/explore-event-streams-microsoft-fabric/3-setup-eventstreams"
+                        },
+                        {
+                            "name": "Eventstream transformations",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/explore-event-streams-microsoft-fabric/4-route-event-data-to-destinations"
+                        },
+                        {
+                            "name": "Exercise - Ingest real-time data with Eventstream in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/explore-event-streams-microsoft-fabric/5-exercise"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/explore-event-streams-microsoft-fabric/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/explore-event-streams-microsoft-fabric/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Work with real-time data in an Eventhouse in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Get started with an Eventhouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/2-get-started-with-kql-queries"
+                        },
+                        {
+                            "name": "Use KQL effectively",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/3-kql-best-practices"
+                        },
+                        {
+                            "name": "Materialized views and stored functions",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/4-advanced-features"
+                        },
+                        {
+                            "name": "Exercise - Work with data in an Eventhouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/5-exercise"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-kql-database-microsoft-fabric/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create Real-Time Dashboards with Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/create-real-time-dashboards-microsoft-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-real-time-dashboards-microsoft-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Get started with real-time dashboards",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-real-time-dashboards-microsoft-fabric/2-get-started-with-real-time-dashboards"
+                        },
+                        {
+                            "name": "Organize and filter dashboard data",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-real-time-dashboards-microsoft-fabric/3-advanced-features"
+                        },
+                        {
+                            "name": "Dashboard management and optimization",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-real-time-dashboards-microsoft-fabric/4-real-time-dashboards-best-practices"
+                        },
+                        {
+                            "name": "Exercise - Get started with real-time dashboards",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-real-time-dashboards-microsoft-fabric/5-exercise"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-real-time-dashboards-microsoft-fabric/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-real-time-dashboards-microsoft-fabric/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Use Activator in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/use-fabric-activator/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-fabric-activator/1-introduction"
+                        },
+                        {
+                            "name": "Configure Activator for your data",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-fabric-activator/2-configure-activator"
+                        },
+                        {
+                            "name": "Create rules in Activator",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-fabric-activator/3-create-rules"
+                        },
+                        {
+                            "name": "Configure actions in Activator",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-fabric-activator/4-configure-actions"
+                        },
+                        {
+                            "name": "Exercise - Use Activator in Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-fabric-activator/5-exercise"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-fabric-activator/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/use-fabric-activator/7-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Implement a data warehouse with Microsoft Fabric DP-602T00 - Training",
+            "url": "https://learn.microsoft.com/en-us/training/paths/work-with-data-warehouses-using-microsoft-fabric",
+            "units": [
+                {
+                    "name": "Introduction to end-to-end analytics using Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Explore end-to-end analytics with Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/2-explore-analytics-fabric"
+                        },
+                        {
+                            "name": "Explore data teams and Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/3-data-team"
+                        },
+                        {
+                            "name": "Enable and use Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/4-use-fabric"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/5-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/introduction-end-analytics-use-microsoft-fabric/6-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get started with data warehouses in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/1-introduction"
+                        },
+                        {
+                            "name": "Understand data warehouse fundamentals",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/2-understand-data-warehouse"
+                        },
+                        {
+                            "name": "Understand data warehouses in Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/3-understand-data-warehouse-fabric"
+                        },
+                        {
+                            "name": "Query and transform data",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/4-query-transform-data"
+                        },
+                        {
+                            "name": "Prepare data for analysis and reporting",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/5-model-data"
+                        },
+                        {
+                            "name": "Secure and monitor your data warehouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/6-security-monitor"
+                        },
+                        {
+                            "name": "Exercise - Analyze data in a data warehouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/7-exercise"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/8-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-data-warehouse/9-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Load data into a Microsoft Fabric data warehouse",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/load-data-into-microsoft-fabric-data-warehouse/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/load-data-into-microsoft-fabric-data-warehouse/1-introduction"
+                        },
+                        {
+                            "name": "Explore data load strategies",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/load-data-into-microsoft-fabric-data-warehouse/2-explore-data-load-strategies"
+                        },
+                        {
+                            "name": "Use data pipelines to load a warehouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/load-data-into-microsoft-fabric-data-warehouse/3-load-data-using-data-pipeline"
+                        },
+                        {
+                            "name": "Load data using T-SQL",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/load-data-into-microsoft-fabric-data-warehouse/4-load-data-using-tsql"
+                        },
+                        {
+                            "name": "Load and transform data with Dataflow Gen2",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/load-data-into-microsoft-fabric-data-warehouse/5-load-data-using-dataflow"
+                        },
+                        {
+                            "name": "Exercise: Load data into a warehouse in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/load-data-into-microsoft-fabric-data-warehouse/6-exercise-load-data-into-warehouse"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/load-data-into-microsoft-fabric-data-warehouse/7-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/load-data-into-microsoft-fabric-data-warehouse/8-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Query a data warehouse in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/query-data-warehouse-microsoft-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-warehouse-microsoft-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Query data",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-warehouse-microsoft-fabric/2-query-data"
+                        },
+                        {
+                            "name": "Use the SQL query editor",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-warehouse-microsoft-fabric/3-use-sql-query-editor"
+                        },
+                        {
+                            "name": "Explore the visual query editor",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-warehouse-microsoft-fabric/4-explore-visual-query-editor"
+                        },
+                        {
+                            "name": "Use client tools to query a warehouse",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-warehouse-microsoft-fabric/5-use-client-tools"
+                        },
+                        {
+                            "name": "Exercise: Query a data warehouse in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-warehouse-microsoft-fabric/6-exercise-query-data-warehouse-microsoft-fabric"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-warehouse-microsoft-fabric/7-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/query-data-warehouse-microsoft-fabric/8-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Monitor a Microsoft Fabric data warehouse",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-data-warehouse/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-data-warehouse/01-introduction"
+                        },
+                        {
+                            "name": "Monitor capacity metrics",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-data-warehouse/02-capacity-metrics"
+                        },
+                        {
+                            "name": "Monitor current activity",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-data-warehouse/03-dynamic-management-views"
+                        },
+                        {
+                            "name": "Monitor queries",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-data-warehouse/04-query-insights"
+                        },
+                        {
+                            "name": "Exercise - Monitor a data warehouse in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-data-warehouse/05-exercise-monitor"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-data-warehouse/06-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-data-warehouse/07-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Secure a Microsoft Fabric data warehouse",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-warehouse-in-microsoft-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-warehouse-in-microsoft-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Explore dynamic data masking",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-warehouse-in-microsoft-fabric/2-explore-dynamic-data-masking"
+                        },
+                        {
+                            "name": "Implement row-level security",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-warehouse-in-microsoft-fabric/3-implement-row-level-security"
+                        },
+                        {
+                            "name": "Implement column-level security",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-warehouse-in-microsoft-fabric/4-implement-column-level-security"
+                        },
+                        {
+                            "name": "Configure SQL granular permissions using T-SQL",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-warehouse-in-microsoft-fabric/5-configure-sql-granular-permissions"
+                        },
+                        {
+                            "name": "Exercise: Secure a warehouse in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-warehouse-in-microsoft-fabric/6-exercise-secure-data-warehouse"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-warehouse-in-microsoft-fabric/7-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-warehouse-in-microsoft-fabric/8-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Manage a Microsoft Fabric Environment - Training",
+            "url": "https://learn.microsoft.com/en-us/training/paths/manage-microsoft-fabric-environment",
+            "units": [
+                {
+                    "name": "Implement continuous integration and continuous delivery (CI/CD) in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/implement-cicd-in-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/implement-cicd-in-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Understand Continuous Integration and Continuous Delivery (CI/CD)",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/implement-cicd-in-fabric/2-understand-cicd"
+                        },
+                        {
+                            "name": "Implement version control and Git integration",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/implement-cicd-in-fabric/3-implement-version-control-and-git-integration"
+                        },
+                        {
+                            "name": "Implement deployment pipelines",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/implement-cicd-in-fabric/4-implement-deployment-pipelines"
+                        },
+                        {
+                            "name": "Automate CI/CD using Fabric APIs",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/implement-cicd-in-fabric/5-automate-cicd-using-fabric-apis"
+                        },
+                        {
+                            "name": "Exercise: Implement deployment pipelines in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/implement-cicd-in-fabric/6-exercise-implement-deployment-pipelines"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/implement-cicd-in-fabric/7-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/implement-cicd-in-fabric/8-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Monitor activities in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-items/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-items/1-introduction"
+                        },
+                        {
+                            "name": "Understand monitoring",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-items/2-understand-monitoring"
+                        },
+                        {
+                            "name": "Use Microsoft Fabric Monitor Hub",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-items/3-use-monitor-hub"
+                        },
+                        {
+                            "name": "Take action with Microsoft Fabric Activator",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-items/4-take-action-with-activator"
+                        },
+                        {
+                            "name": "Exercise - Monitor Fabric activity in the Monitor hub",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-items/5-exercise"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-items/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/monitor-fabric-items/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Secure data access in Microsoft Fabric",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-access-in-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-access-in-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Understand the Fabric security model",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-access-in-fabric/2-understand-fabric-security-model"
+                        },
+                        {
+                            "name": "Configure workspace and item permissions",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-access-in-fabric/3-configure-workspace-and-item-permissions"
+                        },
+                        {
+                            "name": "Apply granular permissions",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-access-in-fabric/4-apply-granular-permissions"
+                        },
+                        {
+                            "name": "Exercise: Secure data access in Microsoft Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-access-in-fabric/5-exercise-secure-data-access"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-access-in-fabric/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/secure-data-access-in-fabric/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Administer a Microsoft Fabric environment",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/administer-fabric/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/administer-fabric/1-introduction"
+                        },
+                        {
+                            "name": "Understand the Fabric Architecture",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/administer-fabric/2-fabric-architecture"
+                        },
+                        {
+                            "name": "Understand the Fabric administrator role",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/administer-fabric/3-admin-role-tools"
+                        },
+                        {
+                            "name": "Manage Fabric security",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/administer-fabric/4-manage-security"
+                        },
+                        {
+                            "name": "Govern data in Fabric",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/administer-fabric/5-govern-fabric"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/administer-fabric/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/administer-fabric/7-summary"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
