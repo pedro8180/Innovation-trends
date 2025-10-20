@@ -1,2 +1,4 @@
 from .question_generator_agent import QuestionGeneratorAgent
 from .url_extractor_service import UrlExtractor
+from .content_extractor_service import SmartContextExtractor
+from .extractor import Extractor
