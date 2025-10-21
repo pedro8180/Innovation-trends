@@ -10,7 +10,7 @@ class Extractor:
 
     def extract_content(self, url, api_key):
         loader = ScrapingAntLoader(
-            urls=url,
+            urls=[url],
             api_key=api_key,
             continue_on_failure=True
         )
@@ -28,7 +28,7 @@ class Extractor:
             for unit in module['units']:
                 for topic in unit['topics']:
                     url = topic['url']
-                    #topic_content = self.extract_content(url, api_key)
+                    topic_content = self.extract_content(url, api_key)
                     output.append(
                         {   
                             "topic_name": topic['name'],
