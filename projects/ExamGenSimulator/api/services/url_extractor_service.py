@@ -2,116 +2,165 @@ import json
 import requests
 from bs4 import BeautifulSoup
 
-def scrape_course_modules_units_and_topics(course_url, api_key):
-    endpoint = 'https://api.scrapingant.com/v2/general'
-    base_path_url = 'https://learn.microsoft.com/en-us/training/paths/'
-    headers = {'x-api-key': api_key}
 
-    params = {
-        'url': course_url,
-        'x-api-key': api_key,
-        'browser': False
-    }
 
-    # Obtener contenido del curso
-    response = requests.get(endpoint, params=params, headers=headers)
-    if response.status_code != 200:
-        print(f"Error al hacer scraping del curso: {response.status_code}")
-        return {}
+class UrlExtractor:
+    base_path_url = "https://learn.microsoft.com/en-us/training/"
+    endpoint = "https://api.scrapingant.com/v2/general" #API
 
-    soup = BeautifulSoup(response.text, 'html.parser')
+    def __init__(self, api_key: str):
+        self.api_key = api_key
 
-    course_title_tag = soup.find('meta', attrs={'property': 'og:title'})
-    course_name = course_title_tag['content'].strip()  if course_title_tag else 'Módulo sin título'
+    #Get HTML code
+    def get_html(self, url: str):
 
-    # Obtener URLs de los módulos desde las etiquetas <meta name="learn_item">
-    modules_urls = []
-    for learn in soup.find_all('meta', attrs={'name': 'learn_item'}):
-        content_value = learn.get('content')
-        if content_value:
-            module_path = content_value.split('.')[-1]
-            full_url = base_path_url + module_path
-            modules_urls.append(full_url)
-
-    # Estructura de salida
-    output = {
-        "course": course_name,
-        "modules": []
-    }
-
-    for module_url in modules_urls:
-        module_params = {
-            'url': module_url,
-            'x-api-key': api_key,
-            'browser': False
+        headers = {'x-api-key': self.api_key}
+        params = {
+            'url': url,
+            'x-api-key': self.api_key,
+            'browser': False  
         }
 
-        module_response = requests.get(endpoint, params=module_params, headers=headers)
-        if module_response.status_code != 200:
-            print(f"Error al hacer scraping del módulo: {module_url}")
-            continue
+        try:
+            # Send request to ScrapingAnt
+            response = requests.get(self.endpoint, params=params, headers=headers, timeout=300)
+            response.raise_for_status()  
+            return BeautifulSoup(response.text, 'html.parser')
+        except requests.exceptions.RequestException as e:
+            print(f"ERROR. Fetching failed {url}: {e}")
+            raise
 
-        module_soup = BeautifulSoup(module_response.text, 'html.parser')
+    #Extract the title for all modules    
+    def get_title(self, url: str, soup: BeautifulSoup):
+        tag = soup.find('h1', class_='title')
+        if not tag:
+            raise ValueError(f"ERROR. Missing <h1 class='title'> tag {url}")
+        text = tag.get_text(strip=True)
+        if not text:
+            raise ValueError(f"ERROR. Missing value in <h1 class='title'> tag {url}")
+        
+        return text
 
+    #Extract module URLs from meta tags
+    def extract_module_urls(self, course_soup: BeautifulSoup):
+        if course_soup is None:
+            raise ValueError("ERROR. The 'course_soup' object cannot be None.")
 
-        # Obtener el nombre del módulo desde la etiqueta meta[property="og:title"]
-        title_tag = module_soup.find('meta', attrs={'property': 'og:title'})
-        module_name = title_tag['content'].strip()  if title_tag else 'Módulo sin título'
+        metas = course_soup.find_all('meta', attrs={'name': 'learn_item'})
+        if not metas:
+            raise ValueError("ERROR. No <meta name='learn_item'> tags found in the HTML.")
 
-        module_units_urls = []
+        urls = []
+        for learn in metas:
+            content_value = learn.get('content')
+            if not content_value:
+                raise ValueError("ERROR. A <meta name='learn_item'> tag is missing the 'content' attribute.")
 
-        # Extraer URLs de unidades desde los enlaces <a class="card"> que llevan a módulos individuales
-        for unit_link in module_soup.find_all('a', href=True):
-            href = unit_link['href']
+            if '.' not in content_value:
+                raise ValueError(f"ERROR. Invalid content format in meta tag: '{content_value}'")
+
+            module_path = "develop-ai-agents-on-azure" if content_value.split('.')[-1] == "develop-ai-agent-on-azure" else content_value.split('.')[-1]
+            urls.append(self.base_path_url + "paths/" + module_path)
+
+        return urls
+
+    #Extract unit URLs from <a> links inside a module page.
+    def extract_unit_urls(self, module_name : str, module_soup: BeautifulSoup):
+        if module_soup is None:
+            raise ValueError(f"ERROR. The 'module_soup' object cannot be None. Module: {module_name}")
+
+        links = module_soup.find_all('a', href=True)
+        if not links:
+            raise ValueError(f"ERROR. No <a href='...'> links found in the module page. Module: {module_name}")
+
+        urls = []
+        for link in links:
+            href = link.get('href')
+
+            if not href:
+                raise ValueError(f"ERROR. A link is missing the 'href' attribute. Link: {link}")
+
             if href.startswith('../../modules/'):
-                unit_url = 'https://learn.microsoft.com/en-us/training/' + href.replace('../../', '')
-                if unit_url not in module_units_urls:
-                    module_units_urls.append(unit_url)
+                unit_url = self.base_path_url + href.replace('../../', '')
+                if unit_url not in urls:
+                    urls.append(unit_url)
 
-        units = []
-        # Procesar cada unidad
-        for unit_url in module_units_urls:
-            unit_params = {
-                'url': unit_url,
-                'x-api-key': api_key,
-                'browser': False
-            }
+        if not urls:
+            raise ValueError(f"ERROR. No valid unit URLs found in the module page. Module: {module_name}")
 
-            unit_response = requests.get(endpoint, params=unit_params, headers=headers)
-            if unit_response.status_code != 200:
-                print(f"Error al hacer scraping de la unidad: {unit_url}")
-                continue
+        return urls
 
-            unit_soup = BeautifulSoup(unit_response.text, 'html.parser')
 
-            # Obtener nombre de la unidad
-            unit_title_tag = unit_soup.find('h1')
-            unit_name = unit_title_tag.text.strip() if unit_title_tag else 'Unidad sin título'
+    #Extracts the unit name and its topics (titles and urls) from a unit page.
+    def extract_data_from_unit(self, unit_url: str):
+        if not unit_url:
+            raise ValueError("ERROR. The 'unit_url' parameter cannot be empty.")
 
-            topics = []
-            for topic_link in unit_soup.find_all('a', class_='unit-title', href=True):
-                topic_name = topic_link.text.strip()
-                topic_url = unit_url + topic_link['href'] if not topic_link['href'].startswith('http') else topic_link['href']
+        # Fetch the HTML of the unit
+        unit_soup = self.get_html(unit_url)
+        if unit_soup is None:
+            raise ValueError(f"ERROR. Failed to retrieve HTML from: {unit_url}")
 
-                topics.append({
-                    'name': topic_name,
-                    'url': topic_url
-                })
+        # Extract unit name
+        title_tag = unit_soup.find('h1')
+        if title_tag is None or not title_tag.text.strip():
+            raise ValueError(f"ERROR. Unit title not found in the page: {unit_url}")
+        unit_name = title_tag.text.strip()
 
-            units.append({
-                'name': unit_name,
-                'url': unit_url,
-                'topics': topics
+        # Extract topics
+        topic_links = unit_soup.find_all('a', class_='unit-title', href=True)
+        if not topic_links:
+            raise ValueError(f"ERROR. No topics found in the unit page: {unit_url}")
+
+        topics = []
+        for topic_link in topic_links:
+            topic_name = topic_link.text.strip()
+            if not topic_name:
+                raise ValueError(f"ERROR. A topic in {unit_url} has no name.")
+
+            topic_url = topic_link['href']
+            if not topic_url:
+                raise ValueError(f"ERROR. A topic in {unit_url} has no href.")
+
+            # Make relative URLs absolute
+            if not topic_url.startswith('http'):
+                topic_url = unit_url.rstrip('/') + '/' + topic_url.lstrip('/')
+
+            topics.append({'name': topic_name, 'url': topic_url})
+
+        return {'name': unit_name, 'url': unit_url, 'topics': topics}
+    
+    #Scrapes the entire course, including modules, units, and topics.
+    def scrape_course(self, course_url: str):
+        # Fetch course HTML
+        course_soup = self.get_html(course_url)
+
+        # Extract course title
+        course_name = self.get_title(course_url, course_soup)
+
+        # Extract module URLs
+        modules_urls = self.extract_module_urls(course_soup)
+
+        course_data = {"course": course_name, "modules": []}
+
+        for module_url in modules_urls:
+            # Fetch module HTML
+            module_soup = self.get_html(module_url)
+
+            # Extract module title
+            module_name = self.get_title(module_url, module_soup)
+
+            #Extract unit URLs
+            unit_urls = self.extract_unit_urls(module_name, module_soup)
+
+            # Extract unit data
+            units = [self.extract_data_from_unit(unit_url) for unit_url in unit_urls]
+
+            course_data["modules"].append({
+                "name": module_name,
+                "url": module_url,
+                "units": units
             })
 
-        output['modules'].append({
-            'name': module_name,
-            'url': module_url,
-            'units': units
-        })
-
-    json_structure = json.dumps(output, indent=4, ensure_ascii=False)
-
-    return json_structure
-
-
+        # Convert dict to JSON string
+        return json.dumps(course_data, indent=4, ensure_ascii=False)
