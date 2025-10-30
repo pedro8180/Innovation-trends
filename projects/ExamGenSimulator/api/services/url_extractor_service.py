@@ -184,4 +184,4 @@ class UrlExtractor:
             })
 
         # Convert dict to JSON string
-        return json.dumps(course_data, indent=4, ensure_ascii=False)
+        return course_data
