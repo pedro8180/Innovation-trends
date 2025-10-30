@@ -19,12 +19,16 @@ class UrlExtractor:
 
     #Load replacements. There are special cases where the url extracted is wrong
     def load_replacements(self, file_path: str):
-        if not os.path.exists(file_path):
-            print(f"ERRO. Replacement file not found: {file_path}. Using an empty dictionary.")
-            return {}
-        with open(file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        return data
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except FileNotFoundError:
+            raise FileNotFoundError(f"ERRO. Replacement file not found: {file_path}")
+        except json.JSONDecodeError as e:
+            raise ValueError(f"ERROR. Invalid JSON format in {file_path}: {e}")
+        except Exception as e:
+            raise RuntimeError(f"ERROR. Error loading replacements from {file_path}: {e}")
+
 
     #Get HTML code
     def get_html(self, url: str):
@@ -42,8 +46,7 @@ class UrlExtractor:
             response.raise_for_status()  
             return BeautifulSoup(response.text, 'html.parser')
         except requests.exceptions.RequestException as e:
-            print(f"ERROR. Fetching failed {url}: {e}")
-            raise
+            raise RuntimeError(f"Failed to fetch URL '{url}': {e}")
 
     #Extract the title for all modules    
     def get_title(self, url: str, soup: BeautifulSoup):
@@ -83,7 +86,6 @@ class UrlExtractor:
 
     #Extract unit URLs from <a> links inside a module page.
     def extract_unit_urls(self, module_name : str, module_soup: BeautifulSoup):
-        print(module_name)
         if module_soup is None:
             raise ValueError(f"ERROR. The 'module_soup' object cannot be None. Module: {module_name}")
 
@@ -104,7 +106,6 @@ class UrlExtractor:
                     urls.append(unit_url)
 
         if not urls:
-            print(module_soup)
             raise ValueError(f"ERROR. No valid unit URLs found in the module page. Module: {module_name}")
 
         return urls
@@ -159,8 +160,6 @@ class UrlExtractor:
 
         # Extract module URLs
         modules_urls = self.extract_module_urls(course_soup)
-
-        print(modules_urls)
 
         course_data = {"course": course_name, "modules": []}
 
