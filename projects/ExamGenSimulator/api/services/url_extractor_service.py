@@ -1,6 +1,7 @@
 import json
 import requests
 from bs4 import BeautifulSoup
+import os
 
 
 
@@ -10,6 +11,20 @@ class UrlExtractor:
 
     def __init__(self, api_key: str):
         self.api_key = api_key
+
+    # This code is for load replacements
+    def __init__(self, api_key: str, replacements_file: str = "../Files/replacements.json"):
+        self.api_key = api_key
+        self.replacements = self.load_replacements(replacements_file)
+
+    #Load replacements. There are special cases where the url extracted is wrong
+    def load_replacements(self, file_path: str):
+        if not os.path.exists(file_path):
+            print(f"ERRO. Replacement file not found: {file_path}. Using an empty dictionary.")
+            return {}
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data
 
     #Get HTML code
     def get_html(self, url: str):
@@ -59,13 +74,16 @@ class UrlExtractor:
             if '.' not in content_value:
                 raise ValueError(f"ERROR. Invalid content format in meta tag: '{content_value}'")
 
-            module_path = "develop-ai-agents-on-azure" if content_value.split('.')[-1] == "develop-ai-agent-on-azure" else content_value.split('.')[-1]
+            last_part = content_value.split('.')[-1]
+            # Apply replacements from the loaded JSON
+            module_path = self.replacements.get(last_part, last_part)
             urls.append(self.base_path_url + "paths/" + module_path)
 
         return urls
 
     #Extract unit URLs from <a> links inside a module page.
     def extract_unit_urls(self, module_name : str, module_soup: BeautifulSoup):
+        print(module_name)
         if module_soup is None:
             raise ValueError(f"ERROR. The 'module_soup' object cannot be None. Module: {module_name}")
 
@@ -86,6 +104,7 @@ class UrlExtractor:
                     urls.append(unit_url)
 
         if not urls:
+            print(module_soup)
             raise ValueError(f"ERROR. No valid unit URLs found in the module page. Module: {module_name}")
 
         return urls
@@ -141,6 +160,8 @@ class UrlExtractor:
         # Extract module URLs
         modules_urls = self.extract_module_urls(course_soup)
 
+        print(modules_urls)
+
         course_data = {"course": course_name, "modules": []}
 
         for module_url in modules_urls:
@@ -163,4 +184,8 @@ class UrlExtractor:
             })
 
         # Convert dict to JSON string
+<<<<<<< HEAD
         return course_data
+=======
+        return course_data
+>>>>>>> feature/updateURLExtractor
