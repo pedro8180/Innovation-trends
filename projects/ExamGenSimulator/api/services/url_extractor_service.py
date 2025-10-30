@@ -184,8 +184,4 @@ class UrlExtractor:
             })
 
         # Convert dict to JSON string
-<<<<<<< HEAD
         return course_data
-=======
-        return course_data
->>>>>>> feature/updateURLExtractor
