@@ -1,0 +1,897 @@
+{
+    "course": "Design and manage analytics solutions using Power BI",
+    "modules": [
+        {
+            "name": "Get started with Microsoft data analytics",
+            "url": "https://learn.microsoft.com/en-us/training/paths/data-analytics-microsoft",
+            "units": [
+                {
+                    "name": "Discover data analysis",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/data-analytics-microsoft/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/data-analytics-microsoft/1-introduction"
+                        },
+                        {
+                            "name": "Overview of data analysis",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/data-analytics-microsoft/2-data-analysis"
+                        },
+                        {
+                            "name": "Roles in data",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/data-analytics-microsoft/3-roles"
+                        },
+                        {
+                            "name": "Tasks of a data analyst",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/data-analytics-microsoft/4-tasks"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/data-analytics-microsoft/5-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/data-analytics-microsoft/6-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get started building with Power BI",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-power-bi/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-power-bi/1-introduction"
+                        },
+                        {
+                            "name": "Use Power BI",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-power-bi/2-using-power-bi"
+                        },
+                        {
+                            "name": "Building blocks of Power BI",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-power-bi/3-building-blocks-of-power-bi"
+                        },
+                        {
+                            "name": "Tour and use the Power BI service",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-power-bi/4-exercise-touring-and-using-power-bi"
+                        },
+                        {
+                            "name": "Knowledge check",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-power-bi/6-get-started-with-power-bi-quiz"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-power-bi/5-summary-cleanup"
+                        }
+                    ]
+                },
+                {
+                    "name": "Get started with Copilot in Power BI",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-copilot/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-copilot/1-introduction"
+                        },
+                        {
+                            "name": "Use Copilot in Power BI to prepare and model data",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-copilot/2-prepare-data-copilot"
+                        },
+                        {
+                            "name": "Create reports with Copilot in Power BI",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-copilot/3-create-reports-copilot"
+                        },
+                        {
+                            "name": "Get your data ready for AI usage in Power BI",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-copilot/4-prep-data-for-ai"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-copilot/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-copilot/7-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Prepare data for analysis with Power BI",
+            "url": "https://learn.microsoft.com/en-us/training/paths/prepare-data-power-bi",
+            "units": [
+                {
+                    "name": "Get data in Power BI",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/get-data/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/1-introduction"
+                        },
+                        {
+                            "name": "Get data from files",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/2-data-files"
+                        },
+                        {
+                            "name": "Get data from relational data sources",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/3-relational-data"
+                        },
+                        {
+                            "name": "Create dynamic reports with parameters",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/3b-parameters"
+                        },
+                        {
+                            "name": "Get data from a NoSQL database",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/4-nosql-database"
+                        },
+                        {
+                            "name": "Get data from online services",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/5-online-services"
+                        },
+                        {
+                            "name": "Select a storage mode",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/6-storage-mode"
+                        },
+                        {
+                            "name": "Get data from Azure Analysis Services",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/7-azure-analysis-services"
+                        },
+                        {
+                            "name": "Fix performance issues",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/8-performance-issues"
+                        },
+                        {
+                            "name": "Resolve data import errors",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/9-import-errors"
+                        },
+                        {
+                            "name": "Exercise - Get data in Power BI",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/lab-prepare"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/10-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/get-data/11-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Clean, transform, and load data in Power BI",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/clean-data-power-bi/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/clean-data-power-bi/1-introduction"
+                        },
+                        {
+                            "name": "Shape the initial data",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/clean-data-power-bi/2-shape-data"
+                        },
+                        {
+                            "name": "Simplify the data structure",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/clean-data-power-bi/3-data-structure"
+                        },
+                        {
+                            "name": "Evaluate and change column data types",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/clean-data-power-bi/4-column-data-types"
+                        },
+                        {
+                            "name": "Combine multiple tables into a single table",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/clean-data-power-bi/5-combine-tables"
+                        },
+                        {
+                            "name": "Profile data in Power BI",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/clean-data-power-bi/6-profile-data"
+                        },
+                        {
+                            "name": "Use Advanced Editor to modify M code",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/clean-data-power-bi/7-advanced-editor"
+                        },
+                        {
+                            "name": "Exercise - Load data in Power BI Desktop",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/clean-data-power-bi/8-lab"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/clean-data-power-bi/9-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/clean-data-power-bi/10-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Model data with Power BI",
+            "url": "https://learn.microsoft.com/en-us/training/paths/model-data-power-bi",
+            "units": [
+                {
+                    "name": "Configure a semantic model",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/configure-semantic-model-power-bi/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/configure-semantic-model-power-bi/1-introduction"
+                        },
+                        {
+                            "name": "Configure relationships",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/configure-semantic-model-power-bi/2-relationships"
+                        },
+                        {
+                            "name": "Configure tables",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/configure-semantic-model-power-bi/3-tables"
+                        },
+                        {
+                            "name": "Configure columns",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/configure-semantic-model-power-bi/4-columns"
+                        },
+                        {
+                            "name": "Configure hierarchies",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/configure-semantic-model-power-bi/5-hierarchies"
+                        },
+                        {
+                            "name": "Configure measures",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/configure-semantic-model-power-bi/6-measures"
+                        },
+                        {
+                            "name": "Configure parameters",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/configure-semantic-model-power-bi/7-parameters"
+                        },
+                        {
+                            "name": "Exercise - Configure a semantic model in Power BI Desktop",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/configure-semantic-model-power-bi/8-lab"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/configure-semantic-model-power-bi/9-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/configure-semantic-model-power-bi/10-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Write DAX formulas for semantic models",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-write-formulas/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-write-formulas/1-introduction"
+                        },
+                        {
+                            "name": "Understand DAX calculation types",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-write-formulas/1a-calculation-types"
+                        },
+                        {
+                            "name": "Write DAX formulas",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-write-formulas/2-formulas"
+                        },
+                        {
+                            "name": "DAX data types",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-write-formulas/3-data-types"
+                        },
+                        {
+                            "name": "Work with DAX functions",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-write-formulas/4-functions"
+                        },
+                        {
+                            "name": "Use DAX operators",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-write-formulas/5-operators"
+                        },
+                        {
+                            "name": "Use DAX variables",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-write-formulas/6-variables"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-write-formulas/7-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-write-formulas/8-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create DAX calculations in semantic models",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-create-calculations/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-create-calculations/1-introduction"
+                        },
+                        {
+                            "name": "Create calculated tables",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-create-calculations/2-calculated-tables"
+                        },
+                        {
+                            "name": "Create calculated columns",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-create-calculations/3-calculated-columns"
+                        },
+                        {
+                            "name": "Understand implicit measures",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-create-calculations/4-implicit-measures"
+                        },
+                        {
+                            "name": "Create explicit measures",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-create-calculations/5-explicit-measures"
+                        },
+                        {
+                            "name": "Use iterator functions",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-create-calculations/6-iterator-functions"
+                        },
+                        {
+                            "name": "Exercise - Create DAX calculations",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-create-calculations/7-lab"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-create-calculations/8-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-create-calculations/9-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Modify DAX filter context in semantic models",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-modify-filter/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-modify-filter/1-introduction"
+                        },
+                        {
+                            "name": "Understand filter context",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-modify-filter/1a-understand-filter-context"
+                        },
+                        {
+                            "name": "Modify filter context",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-modify-filter/2-modify-filter-context"
+                        },
+                        {
+                            "name": "Use filter modifier functions",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-modify-filter/3-filter-modifier-functions"
+                        },
+                        {
+                            "name": "Examine filter context",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-modify-filter/4-examine-filter-context"
+                        },
+                        {
+                            "name": "Perform context transition",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-modify-filter/5-context-transition"
+                        },
+                        {
+                            "name": "Exercise - Modify DAX filter context",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-modify-filter/5a-lab"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-modify-filter/6-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-modify-filter/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Use DAX time intelligence functions in semantic models",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-time-intelligence/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-time-intelligence/1-introduction"
+                        },
+                        {
+                            "name": "Use DAX time intelligence functions",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-time-intelligence/2-functions"
+                        },
+                        {
+                            "name": "Additional time intelligence calculations",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-time-intelligence/3-calculations"
+                        },
+                        {
+                            "name": "Exercise - Use time intelligence functions",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-time-intelligence/3b-lab"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-time-intelligence/4-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/dax-power-bi-time-intelligence/5-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create visual calculations in Power BI Desktop",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-visual-calculations/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-visual-calculations/1-introduction"
+                        },
+                        {
+                            "name": "Understand visual calculations",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-visual-calculations/2-understand-visual-calculations"
+                        },
+                        {
+                            "name": "Create visual calculations",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-visual-calculations/3-create-visual-calculations"
+                        },
+                        {
+                            "name": "Use parameters in visual calculations",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-visual-calculations/4-visual-calculation-parameters"
+                        },
+                        {
+                            "name": "Exercise - Create visual calculations in Power BI Desktop",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-visual-calculations/5-exercise"
+                        },
+                        {
+                            "name": "Module assessment",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-visual-calculations/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-visual-calculations/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Optimize a model for performance in Power BI",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/optimize-model-power-bi/",
+                    "topics": [
+                        {
+                            "name": "Introduction to performance optimization",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/optimize-model-power-bi/1-introduction"
+                        },
+                        {
+                            "name": "Describe semantic model optimization techniques",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/optimize-model-power-bi/1a-optimization-techniques"
+                        },
+                        {
+                            "name": "Review performance of measures, relationships, and visuals",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/optimize-model-power-bi/2-performance"
+                        },
+                        {
+                            "name": "Use variables to improve performance and troubleshooting",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/optimize-model-power-bi/3-variables"
+                        },
+                        {
+                            "name": "Reduce cardinality",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/optimize-model-power-bi/4-reduce-cardinality"
+                        },
+                        {
+                            "name": "Optimize DirectQuery models with table level storage",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/optimize-model-power-bi/5-directquery-models"
+                        },
+                        {
+                            "name": "Create and manage aggregations",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/optimize-model-power-bi/6-aggregations"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/optimize-model-power-bi/7-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/optimize-model-power-bi/8-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Design effective reports in Power BI",
+            "url": "https://learn.microsoft.com/en-us/training/paths/power-bi-effective",
+            "units": [
+                {
+                    "name": "Scope report design requirements",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-requirements/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-requirements/1-introduction"
+                        },
+                        {
+                            "name": "Identify the audience",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-requirements/2-identify"
+                        },
+                        {
+                            "name": "Determine report types",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-requirements/3-determine"
+                        },
+                        {
+                            "name": "Define user interface requirements",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-requirements/4-define-interface"
+                        },
+                        {
+                            "name": "Define user experience requirements",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-requirements/5-define-experience"
+                        },
+                        {
+                            "name": "Explore designs in a Power BI report",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-requirements/6-explore-designs"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-requirements/7-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-requirements/8-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Design Power BI reports",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-reports/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-reports/1-introduction"
+                        },
+                        {
+                            "name": "Design the analytical report layout",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-reports/2-design-layout"
+                        },
+                        {
+                            "name": "Design visually appealing reports",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-reports/3-design-reports"
+                        },
+                        {
+                            "name": "Use report objects",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-reports/4-report-objects"
+                        },
+                        {
+                            "name": "Select report visuals",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-reports/5-report-visuals"
+                        },
+                        {
+                            "name": "Apply filters and slicers to reports",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-reports/6-report-filters"
+                        },
+                        {
+                            "name": "Understand filtering techniques and considerations",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-reports/7-filter-techniques"
+                        },
+                        {
+                            "name": "Case study - Configure report filters based on feedback",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-reports/8-report-filters-case-study"
+                        },
+                        {
+                            "name": "Exercise - Design Power BI reports",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-reports/9-lab"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-reports/10-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-reports/11-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Enhance Power BI report designs for the user experience",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/1-introduction"
+                        },
+                        {
+                            "name": "Design reports to show details",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/1a-design-reports-show-details"
+                        },
+                        {
+                            "name": "Design reports to highlight values",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/2-design-reports"
+                        },
+                        {
+                            "name": "Design reports that behave like apps",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/3-design-app-reports"
+                        },
+                        {
+                            "name": "Work with bookmarks",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/4-bookmarks"
+                        },
+                        {
+                            "name": "Design reports for navigation",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/5-design-navigation-reports"
+                        },
+                        {
+                            "name": "Work with visual headers",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/6-visual-headers"
+                        },
+                        {
+                            "name": "Design reports with built-in assistance",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/7-design-built-in-assistance"
+                        },
+                        {
+                            "name": "Tune report performance",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/8-tune-reports"
+                        },
+                        {
+                            "name": "Optimize reports for mobile use",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/9-reports-mobile"
+                        },
+                        {
+                            "name": "Exercise - Enhance Power BI reports",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/10-lab"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/11-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/power-bi-effective-user-experience/12-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Perform analytics in Power BI",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/",
+                    "topics": [
+                        {
+                            "name": "Introduction to analytics",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/1-introduction"
+                        },
+                        {
+                            "name": "Explore statistical summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/2-statistical-summary"
+                        },
+                        {
+                            "name": "Identify outliers with Power BI visuals",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/3-visuals"
+                        },
+                        {
+                            "name": "Group and bin data for analysis",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/4-group-data"
+                        },
+                        {
+                            "name": "Apply clustering techniques",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/5-clustering-techniques"
+                        },
+                        {
+                            "name": "Conduct time series analysis",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/6-time-series-analysis"
+                        },
+                        {
+                            "name": "Use the Analyze feature",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/7-analyze-feature"
+                        },
+                        {
+                            "name": "Create what-if parameters",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/8-what-if-parameters"
+                        },
+                        {
+                            "name": "Use specialized visuals",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/9-use-specialized-visuals"
+                        },
+                        {
+                            "name": "Exercise - Perform analytics in Power BI",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/10-lab"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/11-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/perform-analytics-power-bi/12-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Manage and secure Power BI",
+            "url": "https://learn.microsoft.com/en-us/training/paths/manage-secure-power-bi",
+            "units": [
+                {
+                    "name": "Manage workspaces in Power BI service",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/manage-workspaces-power-bi-service/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-workspaces-power-bi-service/1-introduction"
+                        },
+                        {
+                            "name": "Understand Power BI service",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-workspaces-power-bi-service/2-understand-power-bi-service"
+                        },
+                        {
+                            "name": "Understand workspaces",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-workspaces-power-bi-service/3-understand-workspaces"
+                        },
+                        {
+                            "name": "Publish to Power BI service",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-workspaces-power-bi-service/4-explore-publishing-process"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-workspaces-power-bi-service/5-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-workspaces-power-bi-service/6-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Manage semantic models in Power BI",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/manage-datasets-power-bi/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-datasets-power-bi/1-introduction"
+                        },
+                        {
+                            "name": "Use a Power BI gateway to connect to on-premises data sources",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-datasets-power-bi/4-power-bi-gateway"
+                        },
+                        {
+                            "name": "Configure a semantic model scheduled refresh",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-datasets-power-bi/5-dataset-refresh"
+                        },
+                        {
+                            "name": "Configure incremental refresh settings",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-datasets-power-bi/6-incremental-refresh"
+                        },
+                        {
+                            "name": "Manage and promote semantic models",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-datasets-power-bi/7-manage-datasets"
+                        },
+                        {
+                            "name": "Boost performance with query caching (Fabric or Premium capacity)",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-datasets-power-bi/9-query-caching"
+                        },
+                        {
+                            "name": "Use lineage and impact analysis",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-datasets-power-bi/9a-lineage"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-datasets-power-bi/10-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/manage-datasets-power-bi/11-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Choose a content distribution method",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/choose-content-distribution-method/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/choose-content-distribution-method/1-introduction"
+                        },
+                        {
+                            "name": "Understand sharing models",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/choose-content-distribution-method/2-understand-sharing-models"
+                        },
+                        {
+                            "name": "Create a Power BI app",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/choose-content-distribution-method/3-create-power-bi-app"
+                        },
+                        {
+                            "name": "Apply data governance principles",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/choose-content-distribution-method/4-apply-data-governance-principles"
+                        },
+                        {
+                            "name": "Track report or dashboard usage",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/choose-content-distribution-method/5-track-report-usage"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/choose-content-distribution-method/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/choose-content-distribution-method/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Create dashboards in Power BI",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/create-dashboards-power-bi/",
+                    "topics": [
+                        {
+                            "name": "Introduction to dashboards",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-dashboards-power-bi/1-introduction"
+                        },
+                        {
+                            "name": "Configure data alerts",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-dashboards-power-bi/2-data-alerts"
+                        },
+                        {
+                            "name": "Explore data by asking questions",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-dashboards-power-bi/3-explore-data"
+                        },
+                        {
+                            "name": "Review Quick insights",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-dashboards-power-bi/4-quick-insights"
+                        },
+                        {
+                            "name": "Add a dashboard theme",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-dashboards-power-bi/5-dashboard-theme"
+                        },
+                        {
+                            "name": "Pin a live report page to a dashboard",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-dashboards-power-bi/6-pin-live-report"
+                        },
+                        {
+                            "name": "Set mobile view",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-dashboards-power-bi/9-set-mobile-view"
+                        },
+                        {
+                            "name": "Exercise - Create dashboards in Power BI",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-dashboards-power-bi/10-lab"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-dashboards-power-bi/11-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/create-dashboards-power-bi/12-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Secure data access in Power BI",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/row-level-security-power-bi/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/row-level-security-power-bi/1-introduction"
+                        },
+                        {
+                            "name": "Configure row-level security with the static method",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/row-level-security-power-bi/2-static-method"
+                        },
+                        {
+                            "name": "Configure row-level security with the dynamic method",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/row-level-security-power-bi/3-dynamic-method"
+                        },
+                        {
+                            "name": "Use single sign-on (SSO) for DirectQuery sources",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/row-level-security-power-bi/3a-use-single-sign-on-for-directquery"
+                        },
+                        {
+                            "name": "Restrict access to Power BI model objects",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/row-level-security-power-bi/3b-restrict-access-to-power-bi-model-objects"
+                        },
+                        {
+                            "name": "Exercise - Enforce row-level security in Power BI",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/row-level-security-power-bi/lab"
+                        },
+                        {
+                            "name": "Check your knowledge",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/row-level-security-power-bi/4-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/en-us/training/modules/row-level-security-power-bi/5-summary"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
