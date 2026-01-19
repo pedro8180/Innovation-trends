@@ -10,3 +10,4 @@ uvicorn
 azure-search-documents==11.7.0b1
 azure-identity
 langchain-scrapegraph
+langgraph
