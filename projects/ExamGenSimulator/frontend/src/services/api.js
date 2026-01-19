@@ -60,6 +60,56 @@ export const apiService = {
     }
   },
 
+  // Send query with optional chat id to persist in the backend
+  sendQueryWithChat: async (query, chatId) => {
+    try {
+      const body = chatId ? { query, chat_id: chatId } : { query };
+      const response = await apiClient.post('/agents', body);
+      return response.data;
+    } catch (error) {
+      throw new Error(
+        error.response?.data?.message || 
+        error.message || 
+        'Failed to send query to the agent'
+      );
+    }
+  },
+
+  // Chat management endpoints
+  createChat: async (name = null) => {
+    try {
+      const response = await apiClient.post('/agents/chats', null, { params: { name } });
+      return response.data; // { chat_id }
+    } catch (error) {
+      throw new Error('Failed to create chat');
+    }
+  },
+
+  listChats: async () => {
+    try {
+      const response = await apiClient.get('/agents/chats');
+      return response.data; // array of chats
+    } catch (error) {
+      throw new Error('Failed to list chats');
+    }
+  },
+
+  getChat: async (chatId) => {
+    try {
+      const response = await apiClient.get(`/agents/chats/${chatId}`);
+      return response.data; // { chat_id, messages }
+    } catch (error) {
+      throw new Error('Failed to get chat');
+    }
+  },
+  deleteChat: async (chatId) => {
+    try {
+      const response = await apiClient.delete(`/agents/chats/${chatId}`);
+      return response.data;
+    } catch (error) {
+      throw new Error('Failed to delete chat');
+    }
+  },
   // Health check endpoint (if you want to add one to your backend)
   healthCheck: async () => {
     try {

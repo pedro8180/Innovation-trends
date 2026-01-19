@@ -124,6 +124,75 @@
   border-bottom-right-radius: 6px;
 }
 
+/* Module List Styling */
+.module-list {
+  width: 100%;
+  padding: 1rem;
+}
+
+.module-list h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.module-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.module-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #F99851;
+}
+
+.module-card h4 {
+  color: #F99851;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.module-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.module-card li {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 0.25rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.module-card li:before {
+  content: "•";
+  color: #F99851;
+  position: absolute;
+  left: 0;
+}
+
+.module-instruction {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
 .bot-message .message-text {
   background: white;
   color: var(--gray-800);

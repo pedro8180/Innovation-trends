@@ -37,39 +37,72 @@ const QuizSummary = ({ quizSession, onContinueNext, onSelectModule, onReturnToMe
   };
 
   const exportSummary = () => {
-    const summaryData = {
-      module: {
-        number: moduleNumber,
-        name: moduleName,
-        completedAt: new Date().toISOString()
-      },
-      score: {
-        correct: correctAnswers,
-        incorrect: incorrectAnswers,
-        total: totalQuestions,
-        percentage: scorePercentage
-      },
-      questions: questions.map((question, index) => {
-        const answer = currentAnswers[question.id];
-        return {
-          number: index + 1,
-          question: question.question,
-          userAnswer: answer?.selected?.toUpperCase(),
-          userAnswerText: question.options[answer?.selected],
-          correctAnswer: question.correctAnswer?.toUpperCase(),
-          correctAnswerText: question.options[question.correctAnswer],
-          isCorrect: answer?.isCorrect,
-          explanation: question.explanation
-        };
-      })
-    };
+    // Create CSV header
+    const headers = [
+      'Question Number',
+      'Question',
+      'Your Answer',
+      'Correct Answer',
+      'Result',
+      'Explanation',
+      'Key Learning Points'
+    ];
 
-    const dataStr = JSON.stringify(summaryData, null, 2);
-    const dataBlob = new Blob([dataStr], { type: 'application/json' });
+    // Prepare the summary data
+    const summaryRows = [
+      [`Module ${moduleNumber} - ${moduleName}`],
+      [`Completed on: ${new Date().toLocaleString()}`],
+      [`Score: ${scorePercentage}% (${correctAnswers} correct out of ${totalQuestions})`],
+      [],
+      headers
+    ];
+
+    // Add question data
+    questions.forEach((question, index) => {
+      const answer = currentAnswers[question.id];
+      const explanation = question.explanation || '';
+      
+      // Split explanation into main points and key learnings
+      let mainExplanation = explanation;
+      let keyLearnings = '';
+      
+      if (explanation.includes('Key Learning Points:')) {
+        [mainExplanation, keyLearnings] = explanation.split('Key Learning Points:');
+      } else if (explanation.includes('Remember:')) {
+        [mainExplanation, keyLearnings] = explanation.split('Remember:');
+      }
+
+      summaryRows.push([
+        index + 1,
+        question.question,
+        `${answer?.selected?.toUpperCase()}: ${question.options[answer?.selected] || 'Not answered'}`,
+        `${question.correctAnswer?.toUpperCase()}: ${question.options[question.correctAnswer]}`,
+        answer?.isCorrect ? 'Correct' : 'Incorrect',
+        mainExplanation.trim(),
+        keyLearnings.trim()
+      ]);
+    });
+
+    // Convert to CSV string
+    const csvContent = summaryRows
+      .map(row => row
+        .map(cell => {
+          // Escape special characters and wrap in quotes if needed
+          const cellStr = String(cell || '');
+          return cellStr.includes(',') || cellStr.includes('\n') || cellStr.includes('"')
+            ? `"${cellStr.replace(/"/g, '""')}"` 
+            : cellStr;
+        })
+        .join(',')
+      )
+      .join('\n');
+
+    // Create and download file
+    const dataBlob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(dataBlob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `Module_${moduleNumber}_Summary_${new Date().toISOString().split('T')[0]}.json`;
+    link.download = `Module_${moduleNumber}_Summary_${new Date().toISOString().split('T')[0]}.csv`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -100,7 +133,7 @@ const QuizSummary = ({ quizSession, onContinueNext, onSelectModule, onReturnToMe
             <div className="stat-number">{incorrectAnswers}</div>
             <div className="stat-label">Incorrect</div>
           </div>
-          <div className="stat-card score" style={{ borderColor: performance.color }}>
+          <div className="stat-card score" style={{ margin: '0 auto', borderColor: performance.color }}>
             <div className="stat-number" style={{ color: performance.color }}>
               {scorePercentage}%
             </div>
@@ -195,57 +228,38 @@ const QuizSummary = ({ quizSession, onContinueNext, onSelectModule, onReturnToMe
       <div className="summary-actions">
         <h3>What would you like to do next?</h3>
         
-        {/* Auto-advance section - only show if not the last module */}
-        {moduleNumber < totalModules && showAutoAdvance && (
-          <div className="auto-advance-section">
-            <div className="auto-advance-info">
-              <h4>Ready for the next challenge?</h4>
-              <p>Module {moduleNumber + 1} is next in the sequence. Continue your learning journey!</p>
+        {/* Module completion actions */}
+        <div className="module-actions">
+          <div className="action-buttons-container">
+            <div className="left-buttons">
+              <button 
+                className="btn btn-secondary action-btn"
+                onClick={() => onContinueNext(true)}
+              >
+                <RotateCcw size={16} />
+                Repeat the Module
+              </button>
+              
+              <button 
+                className="btn btn-outline action-btn"
+                onClick={onSelectModule}
+              >
+                <BookOpen size={16} />
+                Select Module
+              </button>
             </div>
-            <button 
-              className="btn btn-primary action-btn featured"
-              onClick={onContinueNext}
-            >
-              <ArrowRight size={16} />
-              Continue to Module {moduleNumber + 1}
-            </button>
-          </div>
-        )}
-        
-        {/* Alternative options */}
-        <div className="alternative-actions">
-          <h4>Or choose another option:</h4>
-          <div className="action-buttons">
-            {moduleNumber >= totalModules && (
-              <div className="completion-message">
-                <Trophy size={20} />
-                <span>Congratulations! You've completed all available modules!</span>
-              </div>
-            )}
             
-            <button 
-              className="btn btn-primary action-btn"
-              onClick={() => onContinueNext(true)} // Pass true to indicate repeat
-            >
-              <RotateCcw size={16} />
-              Practice Module {moduleNumber} Again
-            </button>
-            
-            <button 
-              className="btn btn-secondary action-btn"
-              onClick={onSelectModule}
-            >
-              <BookOpen size={16} />
-              Browse All Modules
-            </button>
-            
-            <button 
-              className="btn btn-outline action-btn"
-              onClick={onReturnToMenu}
-            >
-              <RotateCcw size={16} />
-              Return to Main Menu
-            </button>
+            <div className="right-buttons">
+              {moduleNumber < totalModules && (
+                <button 
+                  className="btn btn-primary action-btn"
+                  onClick={() => onContinueNext(false)}
+                >
+                  Next Module
+                  <ArrowRight size={16} />
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

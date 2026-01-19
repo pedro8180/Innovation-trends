@@ -5,8 +5,8 @@
   --avanade-dark-orange: #E55A00;
   
   /* Gradients */
-  --gradient-solar: linear-gradient(135deg, #FFD700 0%, #FF8C00 100%);
-  --gradient-luminous: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  --gradient-solar: linear-gradient(135deg, #FFEBDD 0%, #FF8C00 100%);
+  --gradient-luminous: linear-gradient(135deg, #FFEBDD 0%, #FFEBDD 100%);
   --gradient-glow: linear-gradient(135deg, #FF8C00 0%, #FF6600 100%);
   --gradient-flame: linear-gradient(135deg, #FF6600 0%, #FF4500 100%);
   --gradient-thermal: linear-gradient(135deg, #FF4500 0%, #DC143C 100%);

@@ -1,8 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, Loader2, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
 import axios from 'axios';
+import { apiService } from '../services/api';
 import QuizMessage from './QuizMessage';
 import QuizSummary from './QuizSummary';
+import ModuleList from './ModuleList';
+import EvaluationMessage from './EvaluationMessage';
 import './ChatInterface.css';
 
 const ChatInterface = ({ messages, setMessages, isLoading, setIsLoading, currentChatId }) => {
@@ -36,51 +39,51 @@ const ChatInterface = ({ messages, setMessages, isLoading, setIsLoading, current
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/agents', {
-        query: userMessage.content
-      });
+      const response = await apiService.sendQueryWithChat(userMessage.content, currentChatId);
 
       let botMessage = {
         id: Date.now() + 1,
         type: 'bot',
-        content: response.data,
+        content: response,
         timestamp: new Date()
       };
 
       // Check if response is a structured response
-      if (typeof response.data === 'object' && response.data.type) {
-        if (response.data.type === 'quiz') {
+      if (typeof response === 'object' && response.type) {
+        if (response.type === 'quiz') {
           botMessage = {
             ...botMessage,
             type: 'quiz',
             isQuiz: true,
-            content: response.data.message || 'Starting quiz...'
+            content: response.message || 'Starting quiz...'
           };
           
           // Initialize quiz session with module information
           setQuizSessions(prev => ({
             ...prev,
             [botMessage.id]: {
-              questions: translateQuizQuestions(response.data.questions),
+              questions: translateQuizQuestions(response.questions),
               currentQuestionIndex: 0,
               currentAnswers: {},
-              moduleNumber: response.data.module_number || 1,
-              moduleName: translateContent(response.data.module_name) || 'General Practice',
-              totalQuestions: response.data.total_questions || response.data.questions.length,
-              totalModules: response.data.total_modules || 10
+              moduleNumber: response.module_number || 1,
+              moduleName: translateContent(response.module_name) || 'General Practice',
+              totalQuestions: response.total_questions || response.questions.length,
+              totalModules: response.total_modules || 10,
+              score: { correct: 0, total: 0 },
+              isCompleted: false
             }
           }));
-        } else if (response.data.type === 'module_selection') {
+        } else if (response.type === 'module_selection') {
           botMessage = {
             ...botMessage,
             type: 'module_selection',
-            content: response.data.message,
-            modules: response.data.modules
+            content: response.message,
+            modules: response.modules
           };
         }
       } else {
         // Check if response contains quiz questions in text format (fallback)
-        const quizQuestions = parseQuizFromResponse(typeof response.data === 'string' ? response.data : JSON.stringify(response.data));
+        const quizQuestions = parseQuizFromResponse(typeof response === 'string' ? response : JSON.stringify(response));
         if (quizQuestions && quizQuestions.length > 0) {
           botMessage.type = 'quiz';
           botMessage.isQuiz = true;
@@ -120,27 +123,40 @@ const ChatInterface = ({ messages, setMessages, isLoading, setIsLoading, current
     setCheckingAnswer(messageId);
     
     try {
-      const checkPrompt = `Please analyze this answer to the following question:
+      const checkPrompt = `Please analyze this answer and provide a clear response:
 
 Question: ${questionContent}
 User's Answer: ${userAnswer}
 
-Please evaluate if the answer is correct or incorrect and provide a detailed explanation of why it's right or wrong. Include:
-1. Whether the answer is CORRECT or INCORRECT
-2. A clear explanation of the reasoning
-3. If incorrect, what the correct answer should be
-4. Additional learning points or tips
+Format your response using this structure:
 
-Format your response clearly with the evaluation result first.`;
+RESULT: 
+State clearly if the answer is correct or incorrect (one line)
 
-      const response = await axios.post('http://localhost:8000/api/agents', {
-        query: checkPrompt
-      });
+EXPLANATION: 
+Provide a detailed explanation of why the answer is right or wrong, including the key technical concepts involved (2-3 sentences)
+
+[Learn More]: 
+Brief documentation reference where they can learn more about this topic.`;
+
+      const content = await apiService.sendQueryWithChat(checkPrompt, currentChatId);
+      console.log('Raw response:', content); // Debug log
+
+      // Parse based on our expected format
+      const resultMatch = content.match(/Result:\s*(.*?)(?=Explanation:|$)/i);
+      const explanationMatch = content.match(/Explanation:\s*(.*?)(?=Learn More:|$)/i);
+      const learnMoreMatch = content.match(/Learn More:\s*(.*?)$/i);
+
+      const structuredContent = {
+        result: resultMatch ? resultMatch[1].trim() : isCorrect ? 'Correct!' : 'Incorrect',
+        explanation: explanationMatch ? explanationMatch[1].trim() : content,
+        learnMore: learnMoreMatch ? learnMoreMatch[1].trim() : null
+      };
 
       const evaluationMessage = {
         id: Date.now(),
         type: 'evaluation',
-        content: response.data,
+        content: structuredContent,
         timestamp: new Date(),
         relatedMessageId: messageId
       };
@@ -167,54 +183,95 @@ Format your response clearly with the evaluation result first.`;
 
   // Parse quiz content from AI response
   const parseQuizFromResponse = (content) => {
-    // Check if the response contains multiple choice questions
-    const questionPattern = /(\d+\.\s*Question\s*\d*:?\s*)(.*?)(?=\d+\.\s*Question|\**Module|$)/gis;
-    const matches = [...content.matchAll(questionPattern)];
+    // Split content by numbered questions (1., 2., 3., etc.)
+    const questionSections = content.split(/\d+\.\s+/).filter(section => section.trim().length > 0);
     
-    if (matches.length === 0) return null;
+    if (questionSections.length === 0) return null;
     
-    const questions = matches.map((match, index) => {
-      const questionText = match[2].trim();
-      
-      // Extract question and options
-      const lines = questionText.split('\n').filter(line => line.trim());
-      const questionLine = lines[0];
-      
-      // Find options (a), b), c), d))
-      const options = {};
-      const optionPattern = /([a-d])\)\s*(.*)/gi;
-      let correctAnswer = null;
-      
-      lines.forEach(line => {
-        const optionMatch = line.match(optionPattern);
-        if (optionMatch) {
-          const letter = optionMatch[0].match(/([a-d])/i)[1].toLowerCase();
-          const text = optionMatch[0].replace(/[a-d]\)\s*/i, '').trim();
-          options[letter] = text;
-        }
+      const questions = questionSections.map((section, index) => {
+        const lines = section.split('\n').filter(line => line.trim().length > 0);
         
-        // Look for correct answer
-        if (line.toLowerCase().includes('correct answer:')) {
-          const answerMatch = line.match(/([a-d])\)/i);
-          if (answerMatch) {
-            correctAnswer = answerMatch[1].toLowerCase();
+        if (lines.length < 5) return null; // Need question + 4 options minimum
+        
+        // First line is the question
+        const questionText = lines[0].trim();
+        
+        // Find options (a., b., c., d.)
+        const options = {};
+        let correctAnswer = null;
+        let explanation = '';
+        let explanationText = '';
+        
+        let currentLine = 1;
+        
+        // Parse options
+        while (currentLine < lines.length) {
+          const line = lines[currentLine].trim();
+          const optionMatch = line.match(/^([a-d])\.?\s*(.*)/i);
+          
+          if (optionMatch) {
+            const letter = optionMatch[1].toLowerCase();
+            const text = optionMatch[2].trim();
+            options[letter] = text;
+            currentLine++;
+          } else {
+            break;
           }
         }
-      });
+        
+        // Look for correct answer and explanation in remaining lines
+        let isExplanationSection = false;
+
+        for (let i = currentLine; i < lines.length; i++) {
+          const line = lines[i].trim();
+          
+          if (line.toLowerCase().includes('correct answer:')) {
+            const answerMatch = line.match(/([a-d])\.?\s*/i);
+            if (answerMatch) {
+              correctAnswer = answerMatch[1].toLowerCase();
+            }
+          } else if (line.toLowerCase().startsWith('explanation:')) {
+            isExplanationSection = true;
+            continue; // Skip the "Explanation:" line itself
+          } else if (line.toLowerCase().startsWith('source:')) {
+            // If we find a source line, add it to the explanation object
+            explanation = {
+              explanation: explanationText.trim(),
+              source: line.replace(/source:\s*/i, '').trim()
+            };
+            isExplanationSection = false;
+          } else if (isExplanationSection) {
+            // Collect explanation text
+            explanationText += ' ' + line;
+          }
+        }
+
+        // If we didn't find a structured explanation with source, use the collected text
+        if (!explanation && explanationText) {
+          explanation = explanationText.trim();
+        }      // If no explicit correct answer found, try to infer from explanation
+      if (!correctAnswer && explanation) {
+        const answerInExplanation = explanation.match(/answer is ([a-d])\.?\s*/i);
+        if (answerInExplanation) {
+          correctAnswer = answerInExplanation[1].toLowerCase();
+        }
+      }
       
-      // Generate explanation (simplified for now)
-      const explanation = translateContent(`The correct answer is ${correctAnswer?.toUpperCase()}. This question tests your understanding of the topic covered in the certification material.`);
+      // Fallback explanation if none found
+      if (!explanation) {
+        explanation = `The correct answer is ${correctAnswer?.toUpperCase()}. This question tests your understanding of the topic covered in the certification material.`;
+      }
       
       return {
         id: `q_${Date.now()}_${index}`,
-        question: translateContent(questionLine.replace(/^\d+\.\s*Question\s*\d*:?\s*/i, '').trim()),
+        question: translateContent(questionText),
         options: Object.fromEntries(
           Object.entries(options).map(([key, value]) => [key, translateContent(value)])
         ),
         correctAnswer,
-        explanation
+        explanation: translateContent(explanation)
       };
-    }).filter(q => q.correctAnswer && Object.keys(q.options).length > 0);
+    }).filter(q => q && q.correctAnswer && Object.keys(q.options).length >= 2);
     
     return questions.length > 0 ? questions : null;
   };
@@ -229,6 +286,22 @@ Format your response clearly with the evaluation result first.`;
       
       const isCorrect = selectedOption === question.correctAnswer;
       
+      // Check if this question was already answered (to avoid double counting)
+      const wasAlreadyAnswered = session.currentAnswers && session.currentAnswers[questionId];
+      
+      let newScore = { ...(session.score || { correct: 0, total: 0 }) };
+      if (!wasAlreadyAnswered) {
+        // Only update score if this is the first time answering this question
+        newScore = {
+          correct: (newScore.correct || 0) + (isCorrect ? 1 : 0),
+          total: (newScore.total || 0) + 1
+        };
+      }
+      
+      // Calculate total answered questions
+      const answeredQuestions = Object.keys(session.currentAnswers || {});
+      const isLastQuestion = answeredQuestions.length + 1 >= session.questions.length;
+      
       return {
         ...prev,
         [messageId]: {
@@ -240,7 +313,9 @@ Format your response clearly with the evaluation result first.`;
               isCorrect,
               showResult: true
             }
-          }
+          },
+          score: newScore,
+          isCompleted: isLastQuestion
         }
       };
     });
@@ -255,6 +330,21 @@ Format your response clearly with the evaluation result first.`;
         [messageId]: {
           ...session,
           currentQuestionIndex: (session.currentQuestionIndex || 0) + 1
+        }
+      };
+    });
+  };
+
+  // Handle previous question in quiz
+  const handlePreviousQuestion = (messageId) => {
+    setQuizSessions(prev => {
+      const session = prev[messageId] || {};
+      const currentIndex = session.currentQuestionIndex || 0;
+      return {
+        ...prev,
+        [messageId]: {
+          ...session,
+          currentQuestionIndex: Math.max(0, currentIndex - 1)
         }
       };
     });
@@ -280,42 +370,40 @@ Format your response clearly with the evaluation result first.`;
     setIsLoading(true);
     
     try {
-      const response = await axios.post('http://localhost:8000/api/agents', {
-        query: repeatCurrent ? 
-          `Please start Module ${nextModuleNumber} practice questions again. I want to practice this module more. Generate questions in English.` :
-          `Please start Module ${nextModuleNumber} practice questions. I want to continue with the next module in the AI-102 certification sequence. Generate questions in English.`
-      });
+      const response = await apiService.sendQueryWithChat(repeatCurrent ? 
+        `Please start Module ${nextModuleNumber} practice questions again. I want to practice this module more. Generate questions in English.` :
+        `Please start Module ${nextModuleNumber} practice questions. I want to continue with the next module in the AI-102 certification sequence. Generate questions in English.`, currentChatId);
       
       let botMessage = {
         id: Date.now() + 1,
         type: 'bot',
-        content: response.data,
+        content: response,
         timestamp: new Date()
       };
-      
-      if (typeof response.data === 'object' && response.data.type === 'quiz') {
+
+      if (typeof response === 'object' && response.type === 'quiz') {
         botMessage = {
           ...botMessage,
           type: 'quiz',
           isQuiz: true,
-          content: translateContent(response.data.message) || `Starting Module ${nextModuleNumber}...`
+          content: translateContent(response.message) || `Starting Module ${nextModuleNumber}...`
         };
-        
+
         setQuizSessions(prev => ({
           ...prev,
           [botMessage.id]: {
-            questions: translateQuizQuestions(response.data.questions),
+            questions: translateQuizQuestions(response.questions),
             currentQuestionIndex: 0,
             currentAnswers: {},
-            moduleNumber: response.data.module_number || nextModuleNumber,
-            moduleName: translateContent(response.data.module_name) || `Module ${nextModuleNumber}`,
-            totalQuestions: response.data.total_questions || response.data.questions.length,
-            totalModules: response.data.total_modules || 10
+            moduleNumber: response.module_number || nextModuleNumber,
+            moduleName: translateContent(response.module_name) || `Module ${nextModuleNumber}`,
+            totalQuestions: response.total_questions || response.questions.length,
+            totalModules: response.total_modules || 10
           }
         }));
       } else {
         // Try to parse text-based quiz if structured response failed
-        const quizQuestions = parseQuizFromResponse(typeof response.data === 'string' ? response.data : JSON.stringify(response.data));
+        const quizQuestions = parseQuizFromResponse(typeof response === 'string' ? response : JSON.stringify(response));
         if (quizQuestions && quizQuestions.length > 0) {
           botMessage.type = 'quiz';
           botMessage.isQuiz = true;
@@ -365,87 +453,125 @@ Format your response clearly with the evaluation result first.`;
     setIsLoading(true);
     
     try {
-      const response = await axios.post('http://localhost:8000/api/agents', {
-        query: 'Show me all available AI-102 modules for practice. List them with descriptions in English.'
-      });
-      
+      const response = await apiService.sendQueryWithChat('Show me all available AI-102 modules for practice. List them with descriptions in English.', currentChatId);
+
       let botMessage = {
         id: Date.now() + 1,
         type: 'bot',
-        content: translateContent(response.data),
+        content: translateContent(response),
         timestamp: new Date()
       };
-      
-      if (typeof response.data === 'object' && response.data.type === 'module_selection') {
+
+      if (typeof response === 'object' && response.type === 'module_selection') {
         botMessage = {
           ...botMessage,
           type: 'module_selection',
-          content: translateContent(response.data.message),
-          modules: response.data.modules
+          content: translateContent(response.message),
+          modules: response.modules
         };
       }
-      
+
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
       console.error('Error loading modules:', error);
       const errorMessage = {
         id: Date.now() + 1,
-        type: 'bot',
-        content: `📚 **Available AI-102 Certification Modules:**
-
-🔹 **Module 1: AI Fundamentals**
-   • Introduction to Artificial Intelligence
-   • AI workloads and considerations
-   • Responsible AI principles
-
-🔹 **Module 2: Cognitive Services**
-   • Azure Cognitive Services overview
-   • Authentication and security
-   • Service configuration
-
-🔹 **Module 3: Computer Vision**
-   • Image analysis and classification
-   • Optical Character Recognition (OCR)
-   • Custom Vision services
-
-🔹 **Module 4: Natural Language Processing**
-   • Text analysis and sentiment
-   • Language Understanding (LUIS)
-   • QnA Maker integration
-
-🔹 **Module 5: Conversational AI**
-   • Bot Framework fundamentals
-   • Dialog management
-   • Multi-turn conversations
-
-🔹 **Module 6: Speech Services**
-   • Speech-to-text and text-to-speech
-   • Speech translation
-   • Custom speech models
-
-🔹 **Module 7: Document Intelligence**
-   • Form Recognizer service
-   • Document processing
-   • Custom model training
-
-🔹 **Module 8: Knowledge Mining**
-   • Azure Cognitive Search
-   • Indexing and enrichment
-   • Search solutions
-
-🔹 **Module 9: Azure OpenAI**
-   • GPT models and completions
-   • Embeddings and semantic search
-   • Responsible AI practices
-
-🔹 **Module 10: AI Solution Architecture**
-   • End-to-end AI solutions
-   • Performance optimization
-   • Monitoring and maintenance
-
-💡 **Just type "Module X" (where X is the number) to start practicing that module!**`,
-        timestamp: new Date()
+        type: 'module_selection',
+        content: 'Available AI-102 Certification Modules',
+        modules: [
+          {
+            number: 1,
+            title: 'AI Fundamentals',
+            topics: [
+              'Introduction to Artificial Intelligence',
+              'AI workloads and considerations',
+              'Responsible AI principles'
+            ]
+          },
+          {
+            number: 2,
+            title: 'Cognitive Services',
+            topics: [
+              'Azure Cognitive Services overview',
+              'Authentication and security',
+              'Service configuration'
+            ]
+          },
+          {
+            number: 3,
+            title: 'Computer Vision',
+            topics: [
+              'Image analysis and classification',
+              'Optical Character Recognition (OCR)',
+              'Custom Vision services'
+            ]
+          },
+          {
+            number: 4,
+            title: 'Natural Language Processing',
+            topics: [
+              'Text analysis and sentiment',
+              'Language Understanding (LUIS)',
+              'QnA Maker integration'
+            ]
+          },
+          {
+            number: 5,
+            title: 'Conversational AI',
+            topics: [
+              'Bot Framework fundamentals',
+              'Dialog management',
+              'Multi-turn conversations'
+            ]
+          },
+          {
+            number: 6,
+            title: 'Speech Services',
+            topics: [
+              'Speech-to-text and text-to-speech',
+              'Speech translation',
+              'Custom speech models'
+            ]
+          },
+          {
+            number: 7,
+            title: 'Document Intelligence',
+            topics: [
+              'Form Recognizer service',
+              'Document processing',
+              'Custom model training'
+            ]
+          },
+          {
+            number: 8,
+            title: 'Knowledge Mining',
+            topics: [
+              'Azure Cognitive Search',
+              'Indexing and enrichment',
+              'Search solutions'
+            ]
+          },
+          {
+            number: 9,
+            title: 'Azure OpenAI',
+            topics: [
+              'GPT models and completions',
+              'Embeddings and semantic search',
+              'Responsible AI practices'
+            ]
+          },
+          {
+            number: 10,
+            title: 'AI Solution Architecture',
+            topics: [
+              'End-to-end AI solutions',
+              'Performance optimization',
+              'Monitoring and maintenance'
+            ]
+          }
+        ]
       };
+      errorMessage.timestamp = new Date();
       setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
@@ -465,17 +591,15 @@ Format your response clearly with the evaluation result first.`;
     setIsLoading(true);
     
     try {
-      const response = await axios.post('http://localhost:8000/api/agents', {
-        query: 'Hello, I would like to start a new study session. What can you help me with?'
-      });
-      
+      const response = await apiService.sendQueryWithChat('Hello, I would like to start a new study session. What can you help me with?', currentChatId);
+
       const botMessage = {
         id: Date.now() + 1,
         type: 'bot',
-        content: response.data,
+        content: response,
         timestamp: new Date()
       };
-      
+
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
       console.error('Error returning to menu:', error);
@@ -564,6 +688,80 @@ Format your response clearly with the evaluation result first.`;
           const canCheckAnswer = isUserMessage && previousMessage && previousMessage.type === 'bot' && !previousMessage.isQuiz;
           
           // Handle quiz messages differently
+          if (message.type === 'module_selection') {
+            return (
+              <div key={message.id} className="message bot-message">
+                <div className="message-avatar">
+                  <Bot size={16} />
+                </div>
+                <div className="message-content">
+                  <ModuleList 
+                    modules={message.modules} 
+                    onModuleSelect={(moduleNumber) => {
+                      const userMessage = {
+                        id: Date.now(),
+                        type: 'user',
+                        content: `Start Module ${moduleNumber}`,
+                        timestamp: new Date()
+                      };
+                      setMessages(prev => [...prev, userMessage]);
+                      setIsLoading(true);
+                      (async () => {
+                        try {
+                          const response = await apiService.sendQueryWithChat(`Please start Module ${moduleNumber} practice questions. Generate questions in English.`, currentChatId);
+
+                          let botMessage = {
+                            id: Date.now() + 1,
+                            type: 'bot',
+                            content: response,
+                            timestamp: new Date()
+                          };
+
+                          if (typeof response === 'object' && response.type === 'quiz') {
+                            botMessage = {
+                              ...botMessage,
+                              type: 'quiz',
+                              isQuiz: true,
+                              content: translateContent(response.message) || `Starting Module ${moduleNumber}...`
+                            };
+                            
+                            setQuizSessions(prev => ({
+                              ...prev,
+                              [botMessage.id]: {
+                                questions: translateQuizQuestions(response.questions),
+                                currentQuestionIndex: 0,
+                                currentAnswers: {},
+                                moduleNumber: response.module_number || moduleNumber,
+                                moduleName: translateContent(response.module_name) || `Module ${moduleNumber}`,
+                                totalQuestions: response.total_questions || response.questions.length,
+                                totalModules: response.total_modules || 10,
+                                score: { correct: 0, total: 0 }  // Initialize score object
+                              }
+                            }));
+                          }
+
+                          setMessages(prev => [...prev, botMessage]);
+                        } catch (error) {
+                          console.error('Error loading module:', error);
+                          const errorMessage = {
+                            id: Date.now() + 1,
+                            type: 'bot',
+                            content: `Sorry, I couldn't load Module ${moduleNumber}. Please try again.`,
+                            timestamp: new Date(),
+                            isError: true
+                          };
+                          setMessages(prev => [...prev, errorMessage]);
+                        } finally {
+                          setIsLoading(false);
+                        }
+                      })();
+                    }}
+                  />
+                </div>
+              </div>
+            );
+          }
+          
           if (isQuizMessage) {
             const quizSession = quizSessions[message.id];
             if (!quizSession || !quizSession.questions) {
@@ -579,8 +777,12 @@ Format your response clearly with the evaluation result first.`;
               );
             }
             
-            const currentQuestion = quizSession.questions[quizSession.currentQuestionIndex];
-            if (!currentQuestion) {
+            // Check if all questions are answered (module completed)
+            const allQuestionsAnswered = quizSession.questions.every(q => 
+              quizSession.currentAnswers && quizSession.currentAnswers[q.id]
+            );
+            
+            if (allQuestionsAnswered) {
               return (
                 <div key={message.id} className="message bot-message">
                   <div className="message-avatar">
@@ -602,6 +804,20 @@ Format your response clearly with the evaluation result first.`;
               );
             }
             
+            const currentQuestion = quizSession.questions[quizSession.currentQuestionIndex];
+            if (!currentQuestion) {
+              return (
+                <div key={message.id} className="message bot-message">
+                  <div className="message-avatar">
+                    <Bot size={16} />
+                  </div>
+                  <div className="message-content">
+                    <div className="message-text">Loading next question...</div>
+                  </div>
+                </div>
+              );
+            }
+            
             const currentAnswer = quizSession.currentAnswers[currentQuestion.id];
             
             return (
@@ -618,6 +834,7 @@ Format your response clearly with the evaluation result first.`;
                     moduleName={quizSession.moduleName}
                     onAnswerSelected={(option) => handleQuizAnswer(message.id, currentQuestion.id, option)}
                     onNextQuestion={() => handleNextQuestion(message.id)}
+                    onPreviousQuestion={() => handlePreviousQuestion(message.id)}
                     showResult={currentAnswer?.showResult || false}
                     userAnswer={currentAnswer?.selected}
                     isCorrect={currentAnswer?.isCorrect || false}
@@ -644,26 +861,17 @@ Format your response clearly with the evaluation result first.`;
               </div>
               <div className="message-content">
                 <div className="message-text">
-                  {message.content}
+                  {isEvaluation ? (
+                    <EvaluationMessage content={message.content} />
+                  ) : (
+                    message.content
+                  )}
                 </div>
                 <div className="message-actions">
                   <div className="message-time">
                     {formatTimestamp(message.timestamp)}
                   </div>
-                  {canCheckAnswer && (
-                    <button
-                      className="check-answer-btn"
-                      onClick={() => handleCheckAnswer(message.id, message.content, previousMessage.content)}
-                      disabled={checkingAnswer === message.id}
-                      title="Check your answer"
-                    >
-                      {checkingAnswer === message.id ? (
-                        <Loader2 size={14} className="loading-spinner" />
-                      ) : (
-                        <CheckCircle size={14} />
-                      )}
-                    </button>
-                  )}
+
                 </div>
               </div>
             </div>

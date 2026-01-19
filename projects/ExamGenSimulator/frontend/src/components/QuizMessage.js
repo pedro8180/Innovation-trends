@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle, XCircle, Award, ArrowRight } from 'lucide-react';
+import { CheckCircle, XCircle, Award, ArrowRight, ArrowLeft } from 'lucide-react';
 import './QuizMessage.css';
 
 const QuizMessage = ({ 
@@ -8,7 +8,8 @@ const QuizMessage = ({
   totalQuestions, 
   moduleNumber,
   moduleName,
-  onAnswerSelected, 
+  onAnswerSelected,
+  onPreviousQuestion,
   onNextQuestion,
   showResult,
   userAnswer,
@@ -111,19 +112,51 @@ const QuizMessage = ({
           </div>
           
           <div className="quiz-explanation">
-            <h4>Explanation:</h4>
-            <p>{explanation}</p>
+            <div className="explanation-result">
+              <h4>{isCorrect ? 'Correct!' : 'Incorrect'}</h4>
+            </div>
+            <div className="explanation-content">
+              {typeof explanation === 'object' ? 
+                <div dangerouslySetInnerHTML={{__html: explanation.explanation || explanation.content || explanation}} />
+                : 
+                <div dangerouslySetInnerHTML={{__html: explanation}} />
+              }
+            </div>
+            {typeof explanation === 'object' && (explanation.learnMore || explanation.source) && (
+              <div className="explanation-learn-more">
+                <p>{explanation.content}</p>
+                <p><strong>Source: </strong>
+                  {explanation.source || (
+                    <a href={explanation.learnMore} target="_blank" rel="noopener noreferrer">
+                      Documentation
+                    </a>
+                  )}
+                </p>
+              </div>
+            )}
           </div>
 
-          {questionNumber < totalQuestions && (
-            <button 
-              className="btn btn-primary next-question-btn"
-              onClick={onNextQuestion}
-            >
-              Next Question
-              <ArrowRight size={16} />
-            </button>
-          )}
+          <div className="quiz-navigation">
+            {questionNumber > 1 && (
+              <button 
+                className="btn btn-secondary previous-question-btn"
+                onClick={onPreviousQuestion}
+              >
+                <ArrowLeft size={16} />
+                Previous Question
+              </button>
+            )}
+
+            {questionNumber < totalQuestions && (
+              <button 
+                className="btn btn-primary next-question-btn"
+                onClick={onNextQuestion}
+              >
+                Next Question
+                <ArrowRight size={16} />
+              </button>
+            )}
+          </div>
 
           {questionNumber === totalQuestions && (
             <div className="quiz-complete">

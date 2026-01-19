@@ -1,0 +1,68 @@
+.module-list {
+  width: 100%;
+  padding: 1rem;
+}
+
+.module-list h3 {
+  text-align: center;
+  color: var(--gray-800);
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.module-card {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.module-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--avanade-orange);
+}
+
+.module-card h4 {
+  color: var(--avanade-orange);
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+}
+
+.module-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.module-card li {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  margin-bottom: 0.25rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.module-card li:before {
+  content: "•";
+  color: var(--avanade-orange);
+  position: absolute;
+  left: 0;
+}
+
+.module-instruction {
+  text-align: center;
+  color: var(--gray-600);
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
