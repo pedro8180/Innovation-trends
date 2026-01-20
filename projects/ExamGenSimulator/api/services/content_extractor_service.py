@@ -99,49 +99,48 @@ class SmartContextExtractor:
 
         course_name = course_json.get("course", "")
 
-        for module in course_json.get("modules", []):
-            module_name = module.get("name", "")
-            print(f"Module name: {module_name}")
-            for unit in module.get("units", []):
-                unit_name = unit.get("name", "")
-                print(f"Unit name: {unit_name}")
-                for topic in unit.get("topics", []):
-                    topic_name = topic.get("name", "")
-                    topic_url = topic.get("url", "")
-                    print(f"topic Name: {topic_name}")
+    for module in course_json.get("modules", []):
+        module_name = module.get("name", "")
+        for unit in module.get("units", []):
+            unit_name = unit.get("name", "")
+            for idx, topic in enumerate(unit.get("topics", [])):
+                topic_name = topic.get("name", "")
+                topic_url = topic.get("url", "")
 
-                    try:
-                        if ("module assessment" not in topic_name.lower()):
-                            #div = get_topic_div(topic_url, api_key)
-                            div = self.get_div_func(topic_url, api_key)
-                            text = self.get_text_from_div(div)
-                            videos = self.get_embedded_video_src_from_div(div)
+                try:
+                    # Saltar el penúltimo elemento de la lista de topics
+                    if idx == len(unit["topics"]) - 2:
+                        continue
 
-                            #Check if it's an exercise page
-                            if("exercise" in topic_name.lower()):
-                                temp_links = self.get_links_from_div(div)
-                                links = temp_links[:-1] if len(temp_links) > 1 else None
-                                exercise = temp_links[-1] #Add ["url"] if you're using a dict
-                                images = None
-                            else:                    
-                                links = self.get_links_from_div(div)
-                                images = self.get_img_src_from_div(div)
-                                exercise = None
+                    div = get_topic_div(topic_url, api_key)
+                    text = get_text_from_div(div)
+                    videos = get_embedded_video_src_from_div(div)
 
-                            # Combinar datos contextuales + extraídos
-                            topic_data = {
-                                "course": course_name,
-                                "module": module_name,
-                                "unit": unit_name,
-                                "topic": topic_name,
-                                "text": text,
-                                "links": links,
-                                "images": images,
-                                "videos": videos,
-                                "exercise": exercise 
-                            }
+                    #Check if it's an exercise page
+                    if("exercise" in topic_name.lower()):
+                        temp_links = get_links_from_div(div)
+                        links = temp_links[:-1] if len(temp_links) > 1 else None
+                        exercise = temp_links[-1] #Add ["url"] if you're using a dict
+                        images = None
+                    else:                    
+                        links = get_links_from_div(div)
+                        images = get_img_src_from_div(div)
+                        exercise = None
 
-                            results.append(topic_data)
+                    # Combinar datos contextuales + extraídos
+                    topic_data = {
+                        "course": course_name,
+                        "module": module_name,
+                        "unit": unit_name,
+                        "topic": topic_name,
+                        "text": text,
+                        "links": links,
+                        "images": images,
+                        "videos": videos,
+                        "exercise": exercise 
+                    }
+
+                    results.append(topic_data)
 
                     except Exception as e:
                         print(f"ERROR. Failed to process topic: {topic_name} | URL: {topic_url} | {e}")
