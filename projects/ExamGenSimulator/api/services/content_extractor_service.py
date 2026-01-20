@@ -4,94 +4,100 @@ from urllib.parse import urljoin
 import json
 import csv
 import pandas as pd
+import os
 
-
-#Extract the div module-unit-content element from the page using ScrapingAnt API.
 def get_topic_div(topic_url: str, api_key: str): 
-    endpoint = 'https://api.scrapingant.com/v2/general'
-    headers = {'x-api-key': api_key}
-    params = {
-        'url': topic_url,
-        'x-api-key': api_key,
-        'browser': False  
-    }
-
-    try:
-        # Send request to ScrapingAnt
-        response = requests.get(endpoint, params=params, headers=headers, timeout=60)
-        response.raise_for_status()  
-    except requests.exceptions.RequestException as e:
-        print(f"ERROR. Request failed: {e}")
-        raise
-
-    # Parse HTML using BeautifulSoup
-    soup = BeautifulSoup(response.text, 'html.parser')
-
-    # Find the target div by ID
-    div = soup.find("div", id="module-unit-content")
-    if div:
-        return div
-    else:
-        raise RuntimeError(f"ERROR. <div id='module-unit-content'> not found in: {topic_url}")
-
-
-#Extract the content inside the div.
-def get_text_from_div(div: BeautifulSoup):
-    text = div.get_text(separator=" ", strip=True)
-    if not text:
-        raise ValueError("ERROR. No text found in the div")
-    return text
-
-
-#Extract all href URLs from <a> tags inside the div, return a list.
-def get_links_from_div(div: BeautifulSoup):
-    base_url = "https://learn.microsoft.com"
-
-    links = [
-        urljoin(base_url, a["href"].strip())
-        for a in div.find_all("a", href=True)
-    ]
-
-    return links if links else None
-
-
-#Extract all data from <img> tags inside the div.
-def get_img_src_from_div(div: BeautifulSoup):
-    images = div.find_all("img")
-    image_data = []
-
-    for index, img in enumerate(images, start=1):
-        image_dict = {
-            "image_name": f"image{index}",
-            "image_src": img.get("src", "").replace("../../", "https://learn.microsoft.com/en-us/training/"),
-            "image_alt": img.get("alt", "")
+        endpoint = 'https://api.scrapingant.com/v2/general'
+        headers = {'x-api-key': api_key}
+        params = {
+            'url': topic_url,
+            'x-api-key': api_key,
+            'browser': False  
         }
-        image_data.append(image_dict)
 
-    return image_data if image_data else None
+        try:
+            # Send request to ScrapingAnt
+            response = requests.get(endpoint, params=params, headers=headers, timeout=60)
+            response.raise_for_status()  
+        except requests.exceptions.RequestException as e:
+            print(f"ERROR. Request failed: {e}")
+            raise
+
+        # Parse HTML using BeautifulSoup
+        soup = BeautifulSoup(response.text, 'html.parser')
+
+        # Find the target div by ID
+        div = soup.find("div", id="module-unit-content")
+        if div:
+            return div
+        else:
+            raise RuntimeError(f"ERROR. <div id='module-unit-content'> not found in: {topic_url}")
+
+class SmartContextExtractor:
+    def __init__(self):
+        self.get_div_func = get_topic_div
+
+    #Extract the div module-unit-content element from the page using ScrapingAnt API.
+    
 
 
-#Extract all videos src inside the div, return a list of dicts.
-def get_embedded_video_src_from_div(div: BeautifulSoup):
-    video_divs = div.find_all("div", class_="embeddedvideo")
-    videos = []
+    #Extract the content inside the div.
+    def get_text_from_div(self, div: BeautifulSoup):
+        text = div.get_text(separator=" ", strip=True)
+        if not text:
+            raise ValueError("ERROR. No text found in the div")
+        return text
 
-    for index, video_div in enumerate(video_divs, start=1):
-        iframe = video_div.find("iframe", src=True)
-        if iframe:
-            video_data = {
-                "name": f"video{index}",
-                "video_src": iframe["src"]
+
+    #Extract all href URLs from <a> tags inside the div, return a list.
+    def get_links_from_div(self, div: BeautifulSoup):
+        base_url = "https://learn.microsoft.com"
+
+        links = [
+            urljoin(base_url, a["href"].strip())
+            for a in div.find_all("a", href=True)
+        ]
+
+        return links if links else None
+
+
+    #Extract all data from <img> tags inside the div.
+    def get_img_src_from_div(self, div: BeautifulSoup):
+        images = div.find_all("img")
+        image_data = []
+
+        for index, img in enumerate(images, start=1):
+            image_dict = {
+                "image_name": f"image{index}",
+                "image_src": img.get("src", "").replace("../../", "https://learn.microsoft.com/en-us/training/"),
+                "image_alt": img.get("alt", "")
             }
-            videos.append(video_data)
+            image_data.append(image_dict)
 
-    return videos if videos else None
+        return image_data if image_data else None
 
-#Create a dictionary with all data 
-def get_all_content_from_course_into_dict(course_json: json, api_key: str):
-    results = []
 
-    course_name = course_json.get("course", "")
+    #Extract all videos src inside the div, return a list of dicts.
+    def get_embedded_video_src_from_div(self, div: BeautifulSoup):
+        video_divs = div.find_all("div", class_="embeddedvideo")
+        videos = []
+
+        for index, video_div in enumerate(video_divs, start=1):
+            iframe = video_div.find("iframe", src=True)
+            if iframe:
+                video_data = {
+                    "name": f"video{index}",
+                    "video_src": iframe["src"]
+                }
+                videos.append(video_data)
+
+        return videos if videos else None
+
+    #Create a dictionary with all data 
+    def get_all_content_from_course_into_dict(self, course_json: dict, api_key: str):
+        results = []
+
+        course_name = course_json.get("course", "")
 
     for module in course_json.get("modules", []):
         module_name = module.get("name", "")
@@ -136,20 +142,20 @@ def get_all_content_from_course_into_dict(course_json: json, api_key: str):
 
                     results.append(topic_data)
 
-                except Exception as e:
-                    print(f"ERROR. Failed to process topic: {topic_name} | URL: {topic_url} | {e}")
-                    continue
+                    except Exception as e:
+                        print(f"ERROR. Failed to process topic: {topic_name} | URL: {topic_url} | {e}")
+                        continue
 
-    return results
+        return results
 
-# Create DataFrame using all content
-def createDataFrame(data):
-    return pd.DataFrame(data)
+    # Create DataFrame using all content
+    def createDataFrame(data):
+        return pd.DataFrame(data)
 
-# Create CSV file using all content
-def createCSVFile(data, fileName: str):
-    # Write csv file
-    with open(f"../Files/{fileName}.csv", mode='w', newline='', encoding='utf-8') as csv_file:
-        writer = csv.DictWriter(csv_file, fieldnames=data[0].keys())
-        writer.writeheader()
-        writer.writerows(data)
+    # Create CSV file using all content
+    def createCSVFile(data, fileName: str):
+        # Write csv file
+        with open(f"../Files/{fileName}.csv", mode='w', newline='', encoding='utf-8') as csv_file:
+            writer = csv.DictWriter(csv_file, fieldnames=data[0].keys())
+            writer.writeheader()
+            writer.writerows(data)

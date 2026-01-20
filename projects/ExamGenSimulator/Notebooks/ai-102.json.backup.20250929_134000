@@ -1,0 +1,1445 @@
+{
+    "modules": [
+        {
+            "name": "Desarrollo de aplicaciones de IA generativas en Azure - Training",
+            "url": "https://learn.microsoft.com/es-es/training/paths/create-custom-copilots-ai-studio",
+            "units": [
+                {
+                    "name": "Planeamiento y preparación para desarrollar soluciones de inteligencia artificial en Azure",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/prepare-azure-ai-development/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/prepare-azure-ai-development/1-introduction"
+                        },
+                        {
+                            "name": "¿Qué es la inteligencia artificial?",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/prepare-azure-ai-development/2-what-is-ai"
+                        },
+                        {
+                            "name": "Servicios de Azure AI",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/prepare-azure-ai-development/3-azure-ai-services"
+                        },
+                        {
+                            "name": "Azure AI Foundry",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/prepare-azure-ai-development/4-azure-ai-foundry"
+                        },
+                        {
+                            "name": "Herramientas y SDK de desarrollo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/prepare-azure-ai-development/5-tools-and-sdks"
+                        },
+                        {
+                            "name": "Inteligencia artificial responsable",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/prepare-azure-ai-development/6-responsible-ai"
+                        },
+                        {
+                            "name": "Ejercicio: Preparación para un proyecto de desarrollo de IA",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/prepare-azure-ai-development/7-exercise-explore-ai-foundry"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/prepare-azure-ai-development/8-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/prepare-azure-ai-development/9-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Elección e implementación de modelos desde el catálogo de modelos en el portal de Azure AI Foundry",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/explore-models-azure-ai-studio/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/explore-models-azure-ai-studio/1-introduction"
+                        },
+                        {
+                            "name": "Explorar el catálogo de modelos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/explore-models-azure-ai-studio/2-select-model"
+                        },
+                        {
+                            "name": "Implementación de un modelo en un punto de conexión",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/explore-models-azure-ai-studio/3-deploy-model"
+                        },
+                        {
+                            "name": "Optimizar el rendimiento del modelo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/explore-models-azure-ai-studio/4-improve-model"
+                        },
+                        {
+                            "name": "Ejercicio: Exploración, implementación y chat con modelos de lenguaje",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/explore-models-azure-ai-studio/5-exercise"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/explore-models-azure-ai-studio/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/explore-models-azure-ai-studio/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Desarrollo de una aplicación de IA con el SDK de Azure AI Foundry",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/ai-foundry-sdk/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-foundry-sdk/01-introduction"
+                        },
+                        {
+                            "name": "¿Qué es el SDK de Azure AI Foundry?",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-foundry-sdk/02-azure-ai-foundry-sdk"
+                        },
+                        {
+                            "name": "Trabajar con conexiones de proyecto",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-foundry-sdk/03-connections"
+                        },
+                        {
+                            "name": "Creación de un cliente de chat",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-foundry-sdk/04-chat-client"
+                        },
+                        {
+                            "name": "Ejercicio: Creación de una aplicación de chat de IA generativa",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-foundry-sdk/05-exercise"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-foundry-sdk/06-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-foundry-sdk/07-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Introducción al flujo de avisos para desarrollar aplicaciones de modelos lingüísticos en Azure AI Foundry",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/get-started-prompt-flow-ai-studio/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/get-started-prompt-flow-ai-studio/1-introduction"
+                        },
+                        {
+                            "name": "Descripción del ciclo de vida de desarrollo de una aplicación de modelo de lenguaje grande (LLM)",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/get-started-prompt-flow-ai-studio/2-understand-lifecycle"
+                        },
+                        {
+                            "name": "Descripción de los componentes principales y exploración de los tipos de flujo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/get-started-prompt-flow-ai-studio/3-understand-flows"
+                        },
+                        {
+                            "name": "Exploración de conexiones y entornos de ejecución",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/get-started-prompt-flow-ai-studio/4-connections-runtimes"
+                        },
+                        {
+                            "name": "Exploración de variantes y opciones de supervisión",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/get-started-prompt-flow-ai-studio/5-variants-monitor"
+                        },
+                        {
+                            "name": "Ejercicio: Introducción al flujo de mensajes",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/get-started-prompt-flow-ai-studio/6-exercise"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/get-started-prompt-flow-ai-studio/7-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/get-started-prompt-flow-ai-studio/8-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Desarrollo de una solución basada en RAG con sus propios datos mediante Azure AI Foundry",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/build-copilot-ai-studio/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-copilot-ai-studio/1-introduction"
+                        },
+                        {
+                            "name": "Comprender cómo fundamentar tu modelo de lenguaje",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-copilot-ai-studio/2-ground-language-model"
+                        },
+                        {
+                            "name": "Hacer que los datos sean buscables",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-copilot-ai-studio/3-search-data"
+                        },
+                        {
+                            "name": "Creación de una aplicación cliente basada en RAG",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-copilot-ai-studio/3b-openai-client"
+                        },
+                        {
+                            "name": "Implementar RAG en un flujo de aviso",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-copilot-ai-studio/4-build-copilot"
+                        },
+                        {
+                            "name": "Ejercicio: Creación de una aplicación de IA generativa que use sus propios datos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-copilot-ai-studio/5-exercise"
+                        },
+                        {
+                            "name": "Evaluación del módulo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-copilot-ai-studio/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-copilot-ai-studio/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Ajuste de un modelo de lenguaje con Azure AI Foundry",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/finetune-model-copilot-ai-studio/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/finetune-model-copilot-ai-studio/1-introduction"
+                        },
+                        {
+                            "name": "Comprender cuándo optimizar un modelo de lenguaje",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/finetune-model-copilot-ai-studio/2-understand-finetune"
+                        },
+                        {
+                            "name": "Preparación de los datos para optimizar un modelo de finalización de chat",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/finetune-model-copilot-ai-studio/3-prepare-data"
+                        },
+                        {
+                            "name": "Exploración de modelos de lenguaje de ajuste fino en el portal de Azure AI Foundry",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/finetune-model-copilot-ai-studio/4-finetune-model"
+                        },
+                        {
+                            "name": "Ejercicio: Ajuste de un modelo de lenguaje",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/finetune-model-copilot-ai-studio/5-exercise"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/finetune-model-copilot-ai-studio/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/finetune-model-copilot-ai-studio/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Implementación de una solución de inteligencia artificial generativa responsable en Azure AI Foundry",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/responsible-ai-studio/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/responsible-ai-studio/1-introduction"
+                        },
+                        {
+                            "name": "Planeamiento de una solución de IA generativa responsable",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/responsible-ai-studio/2-plan-responsible-ai"
+                        },
+                        {
+                            "name": "Mapear los posibles perjuicios",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/responsible-ai-studio/3-identify-harms"
+                        },
+                        {
+                            "name": "Medición de posibles daños",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/responsible-ai-studio/4-measure-harms"
+                        },
+                        {
+                            "name": "Mitigar posibles daños",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/responsible-ai-studio/5-mitigate-harms"
+                        },
+                        {
+                            "name": "Administración de una solución de IA generativa responsable",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/responsible-ai-studio/6-operate-responsibly"
+                        },
+                        {
+                            "name": "Ejercicio: Aplicación de filtros de contenido para evitar la salida de contenido perjudicial",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/responsible-ai-studio/7-exercise-content-filters"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/responsible-ai-studio/8-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/responsible-ai-studio/9-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Evaluación del rendimiento de la inteligencia artificial generativa en el portal de Azure AI Foundry",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/evaluate-models-azure-ai-studio/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/evaluate-models-azure-ai-studio/1-introduction"
+                        },
+                        {
+                            "name": "Evaluación del rendimiento del modelo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/evaluate-models-azure-ai-studio/2-assess-models"
+                        },
+                        {
+                            "name": "Evaluar manualmente el rendimiento de un modelo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/evaluate-models-azure-ai-studio/3-manual-evaluations"
+                        },
+                        {
+                            "name": "Evaluaciones automatizadas",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/evaluate-models-azure-ai-studio/3b-automated-evaluations"
+                        },
+                        {
+                            "name": "Ejercicio: Evaluación del rendimiento del modelo de IA generativo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/evaluate-models-azure-ai-studio/5-exercise"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/evaluate-models-azure-ai-studio/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/evaluate-models-azure-ai-studio/7-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Desarrollo de agentes de IA en Azure - Training",
+            "url": "https://learn.microsoft.com/es-es/training/paths/develop-ai-agents-on-azure",
+            "units": [
+                {
+                    "name": "Introducción al desarrollo de agentes de IA en Azure",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/ai-agent-fundamentals/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-agent-fundamentals/1-introduction"
+                        },
+                        {
+                            "name": "¿Qué son los agentes de inteligencia artificial?",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-agent-fundamentals/2-what-are-agents"
+                        },
+                        {
+                            "name": "Opciones para el desarrollo del agente",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-agent-fundamentals/3-agent-development"
+                        },
+                        {
+                            "name": "Servicio del agente de Azure AI Foundry",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-agent-fundamentals/4-azure-ai-agent-service"
+                        },
+                        {
+                            "name": "Ejercicio: Exploración del desarrollo del agente de IA",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-agent-fundamentals/5-exercise"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-agent-fundamentals/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-agent-fundamentals/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Desarrollo de un agente de IA con azure AI Foundry Agent Service",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-azure/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-azure/1-introduction"
+                        },
+                        {
+                            "name": "¿Qué es un agente de IA?",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-azure/2-what-is-ai-agent"
+                        },
+                        {
+                            "name": "Cómo utilizar el servicio de agente de Azure AI Foundry",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-azure/3-how-use-agent-service"
+                        },
+                        {
+                            "name": "Desarrollo de agentes con el servicio de agentes de Azure AI Foundry",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-azure/4-when-use-agent-service"
+                        },
+                        {
+                            "name": "Ejercicio: Creación de un agente de IA",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-azure/5-exercise"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-azure/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-azure/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Integración de herramientas personalizadas en el agente",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/build-agent-with-custom-tools/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-agent-with-custom-tools/1-introduction"
+                        },
+                        {
+                            "name": "¿Por qué usar herramientas personalizadas?",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-agent-with-custom-tools/2-why-use-custom-tools"
+                        },
+                        {
+                            "name": "Opciones para implementar herramientas personalizadas",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-agent-with-custom-tools/3-custom-tool-options"
+                        },
+                        {
+                            "name": "Integración de herramientas personalizadas",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-agent-with-custom-tools/4-how-use-custom-tools"
+                        },
+                        {
+                            "name": "Ejercicio: Compilación de un agente con herramientas personalizadas",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-agent-with-custom-tools/5-exercise"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-agent-with-custom-tools/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-agent-with-custom-tools/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Desarrollo de una solución multiagente con azure AI Foundry Agent Service",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/develop-multi-agent-azure-ai-foundry/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-multi-agent-azure-ai-foundry/1-introduction"
+                        },
+                        {
+                            "name": "Comprender los agentes conectados",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-multi-agent-azure-ai-foundry/2-understand-connected-agents"
+                        },
+                        {
+                            "name": "Diseño de una solución multiagente con agentes conectados",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-multi-agent-azure-ai-foundry/3-design-multi-agent-solution"
+                        },
+                        {
+                            "name": "Ejercicio: Desarrollo de una aplicación multiagente con Azure AI Foundry",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-multi-agent-azure-ai-foundry/4-exercise"
+                        },
+                        {
+                            "name": "Evaluación del módulo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-multi-agent-azure-ai-foundry/5-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-multi-agent-azure-ai-foundry/6-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Integración de herramientas de MCP con azure AI Agents",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/connect-agent-to-mcp-tools/",
+                    "topics": [
+                        {
+                            "name": "Introduction",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/connect-agent-to-mcp-tools/1-introduction"
+                        },
+                        {
+                            "name": "Comprender el descubrimiento de herramientas de MCP",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/connect-agent-to-mcp-tools/2-understand-mcp-tool-discovery"
+                        },
+                        {
+                            "name": "Integración de herramientas de agente mediante un servidor MCP y un cliente",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/connect-agent-to-mcp-tools/3-mcp-client-server-setup"
+                        },
+                        {
+                            "name": "Uso de agentes de Azure AI con servidores MCP",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/connect-agent-to-mcp-tools/4-use-azure-ai-agents-with-mcp"
+                        },
+                        {
+                            "name": "Ejercicio: Conexión de herramientas de MCP a agentes de Azure AI",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/connect-agent-to-mcp-tools/5-exercise"
+                        },
+                        {
+                            "name": "Evaluación del módulo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/connect-agent-to-mcp-tools/6-knowledge-check"
+                        },
+                        {
+                            "name": "Summary",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/connect-agent-to-mcp-tools/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Desarrollo de un agente de IA con kernel semántico",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-with-semantic-kernel/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-with-semantic-kernel/1-introduction"
+                        },
+                        {
+                            "name": "Descripción de los agentes de inteligencia artificial de kernel semántico",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-with-semantic-kernel/2-understand-semantic-kernel-agents"
+                        },
+                        {
+                            "name": "Creación de un agente de Azure AI con kernel semántico",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-with-semantic-kernel/3-create-azure-ai-agent"
+                        },
+                        {
+                            "name": "Incorporación de complementos al agente de Azure AI",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-with-semantic-kernel/4-add-plugins-to-agent"
+                        },
+                        {
+                            "name": "Ejercicio: Desarrollo de un agente de Azure AI con el SDK de kernel semántico",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-with-semantic-kernel/5-exercise"
+                        },
+                        {
+                            "name": "Comprobación de conocimientos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-with-semantic-kernel/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-ai-agent-with-semantic-kernel/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Orquestación de una solución multiagente mediante kernel semántico",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/1-introduction"
+                        },
+                        {
+                            "name": "Descripción del marco del agente de kernel semántico",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/2-understand-agent-framework"
+                        },
+                        {
+                            "name": "Descripción de la orquestación del agente",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/3-understand-agent-orchestration"
+                        },
+                        {
+                            "name": "Uso de la orquestación simultánea",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/4-use-concurrent-orchestration"
+                        },
+                        {
+                            "name": "Uso de la orquestación secuencial",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/5-use-sequential-orchestration"
+                        },
+                        {
+                            "name": "Uso de la orquestación de chat en grupo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/6-use-group-chat-orchestration"
+                        },
+                        {
+                            "name": "Uso de la orquestación de entrega",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/7-use-handoff-orchestration"
+                        },
+                        {
+                            "name": "Uso de la orquestación magentic",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/8-use-magentic-orchestration"
+                        },
+                        {
+                            "name": "Administración de ciclos de vida en tiempo de ejecución de orquestación",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/9-manage-orchestration-runtime-lifecycles"
+                        },
+                        {
+                            "name": "Ejercicio: Desarrollo de una solución multiagente",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/10-exercise"
+                        },
+                        {
+                            "name": "Comprobación de conocimientos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/11-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/orchestrate-semantic-kernel-multi-agent-solution/12-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Detección de agentes de Azure AI con A2A",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/discover-agents-with-a2a/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/discover-agents-with-a2a/1-introduction"
+                        },
+                        {
+                            "name": "Definición de un agente de A2A",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/discover-agents-with-a2a/2-define-a2a-agent"
+                        },
+                        {
+                            "name": "Implemente un ejecutor de agente",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/discover-agents-with-a2a/3-implement-agent-executor"
+                        },
+                        {
+                            "name": "Hospedar un servidor A2A",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/discover-agents-with-a2a/4-host-a2a-agent-server"
+                        },
+                        {
+                            "name": "Conéctate con tu agente A2A",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/discover-agents-with-a2a/5-connect-to-a2a-agent"
+                        },
+                        {
+                            "name": "Ejercicio: Conexión a agentes remotos de Azure AI con el protocolo A2A",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/discover-agents-with-a2a/6-exercise"
+                        },
+                        {
+                            "name": "Evaluación del módulo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/discover-agents-with-a2a/7-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/discover-agents-with-a2a/8-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Desarrollo de soluciones de lenguaje natural en Azure - Training",
+            "url": "https://learn.microsoft.com/es-es/training/paths/develop-language-solutions-azure-ai",
+            "units": [
+                {
+                    "name": "Análisis de texto con lenguaje de Azure AI",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/analyze-text-ai-language/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-text-ai-language/1-introduction"
+                        },
+                        {
+                            "name": "Aprovisionamiento de un recurso de lenguaje de Azure AI",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-text-ai-language/2-provision-resource"
+                        },
+                        {
+                            "name": "Detectar idioma",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-text-ai-language/3-detect-language"
+                        },
+                        {
+                            "name": "Extracción de frases clave",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-text-ai-language/4-extract-key-phrases"
+                        },
+                        {
+                            "name": "Análisis de opiniones",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-text-ai-language/5-analyze-sentiment"
+                        },
+                        {
+                            "name": "Extraer entidades",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-text-ai-language/6-extract-entities"
+                        },
+                        {
+                            "name": "Extraer entidades vinculadas",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-text-ai-language/7-extract-linked-entities"
+                        },
+                        {
+                            "name": "Ejercicio: Análisis de texto",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-text-ai-language/8-exercise-analyze-text"
+                        },
+                        {
+                            "name": "Evaluación del módulo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-text-ai-language/9-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-text-ai-language/10-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Crear soluciones de respuesta a preguntas con Lenguaje de Azure AI",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/create-question-answer-solution-ai-language/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-question-answer-solution-ai-language/1-introduction"
+                        },
+                        {
+                            "name": "Entender la respuesta a preguntas",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-question-answer-solution-ai-language/2-understand-question-answer-capability"
+                        },
+                        {
+                            "name": "Comparación de respuestas a preguntas con Azure AI Language Understanding",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-question-answer-solution-ai-language/3-compare-to-language-understanding"
+                        },
+                        {
+                            "name": "Creación de una base de conocimientos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-question-answer-solution-ai-language/4-create-knowledge-base"
+                        },
+                        {
+                            "name": "Implementación de una conversación multiturno",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-question-answer-solution-ai-language/5-implement-multi-turn-conversation"
+                        },
+                        {
+                            "name": "Prueba y publicación de una base de conocimiento",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-question-answer-solution-ai-language/6-test-publish-knowledge-base"
+                        },
+                        {
+                            "name": "Uso de una base de conocimiento",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-question-answer-solution-ai-language/7-consume-client-interfaces"
+                        },
+                        {
+                            "name": "Mejora del rendimiento de la respuesta a preguntas",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-question-answer-solution-ai-language/8-implement-active-learning"
+                        },
+                        {
+                            "name": "Ejercicio: Creación de una solución de respuesta a preguntas",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-question-answer-solution-ai-language/10-exercise-create"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-question-answer-solution-ai-language/11-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-question-answer-solution-ai-language/12-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Creación de un modelo de reconocimiento del lenguaje conversacional",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/build-language-understanding-model/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-language-understanding-model/1-introduction"
+                        },
+                        {
+                            "name": "Descripción de las funcionalidades precompiladas del servicio de lenguaje de Azure AI",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-language-understanding-model/2a-understand-prebuilt-capabilities"
+                        },
+                        {
+                            "name": "Descripción de los recursos para crear un modelo de reconocimiento de lenguaje conversacional",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-language-understanding-model/2-understand-resources-for-building"
+                        },
+                        {
+                            "name": "Definir intenciones, expresiones y entidades",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-language-understanding-model/3-define-intents-utterances-entities"
+                        },
+                        {
+                            "name": "Uso de patrones para diferenciar expresiones similares",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-language-understanding-model/4-use-patterns-differentiate-similar-utterances"
+                        },
+                        {
+                            "name": "Uso de componentes de entidad pregeneradas",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-language-understanding-model/5-use-pre-built-entity-components"
+                        },
+                        {
+                            "name": "Entrenamiento, prueba, publicación y revisión de un modelo de language understanding conversacional",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-language-understanding-model/6-train-test-publish-review"
+                        },
+                        {
+                            "name": "Ejercicio: Creación de un modelo de comprensión del lenguaje conversacional de los servicios de Azure AI",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-language-understanding-model/7-exercise"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-language-understanding-model/8-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/build-language-understanding-model/9-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Creación de soluciones de clasificación de texto personalizadas",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/custom-text-classification/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-text-classification/1-introduction"
+                        },
+                        {
+                            "name": "Descripción de los tipos de proyectos de clasificación",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-text-classification/2-understand-types-of-classification-projects"
+                        },
+                        {
+                            "name": "Descripción de cómo crear proyectos de clasificación de texto",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-text-classification/3-understand-how-to-build-projects"
+                        },
+                        {
+                            "name": "Ejercicio: Clasificación de texto",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-text-classification/4-exercise-classify-text"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-text-classification/5-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-text-classification/6-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Reconocimiento de entidades con nombre personalizado",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/custom-name-entity-recognition/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-name-entity-recognition/1-introduction"
+                        },
+                        {
+                            "name": "Descripción del reconocimiento de entidades con nombre personalizado",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-name-entity-recognition/2-understand-custom-named"
+                        },
+                        {
+                            "name": "Etiquetado de los datos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-name-entity-recognition/3-tag-your-data"
+                        },
+                        {
+                            "name": "Entrenamiento y evaluación del modelo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-name-entity-recognition/4-train-evaluate-your-model"
+                        },
+                        {
+                            "name": "Ejercicio: Extracción de entidades personalizadas",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-name-entity-recognition/5-exercise-extract-custom-entities"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-name-entity-recognition/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/custom-name-entity-recognition/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Traducción de texto con el servicio Traductor de Azure AI",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/translate-text-with-translator-service/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-text-with-translator-service/1-introduction"
+                        },
+                        {
+                            "name": "Aprovisionamiento de un recurso de Azure AI Translator",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-text-with-translator-service/2-provision-translator-resource"
+                        },
+                        {
+                            "name": "Descripción de la detección, traducción y transliteración de idioma",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-text-with-translator-service/3-understand-language-detection-translation-transliteration"
+                        },
+                        {
+                            "name": "Especificar opciones de traducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-text-with-translator-service/4-specify-translation-options"
+                        },
+                        {
+                            "name": "Definición de traducciones personalizadas",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-text-with-translator-service/5-define-custom-translations"
+                        },
+                        {
+                            "name": "Ejercicio: Traducción de texto con el servicio Azure AI Translator",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-text-with-translator-service/6-exercise-translate-text"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-text-with-translator-service/7-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-text-with-translator-service/8-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Creación de aplicaciones habilitadas para voz con Servicios de Azure AI",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/create-speech-enabled-apps/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-speech-enabled-apps/1-introduction"
+                        },
+                        {
+                            "name": "Aprovisionamiento de un recurso de Azure para la voz",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-speech-enabled-apps/2-create-speech-service"
+                        },
+                        {
+                            "name": "Uso de la API de conversión de voz en texto de Azure AI",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-speech-enabled-apps/3-speech-to-text"
+                        },
+                        {
+                            "name": "Uso de la API Text-to-Speech",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-speech-enabled-apps/4-text-to-speech"
+                        },
+                        {
+                            "name": "Configuración del formato de audio y las voces",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-speech-enabled-apps/5-audio-format-voices"
+                        },
+                        {
+                            "name": "Uso de Lenguaje de marcado de síntesis de voz",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-speech-enabled-apps/6-speech-synthesis-markup"
+                        },
+                        {
+                            "name": "Ejercicio: Creación de una aplicación habilitada para voz",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-speech-enabled-apps/7-exercise-speech-app"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-speech-enabled-apps/8-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/create-speech-enabled-apps/9-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Traducción de voz con el servicio de voz de Azure AI",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/translate-speech-speech-service/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-speech-speech-service/1-introduction"
+                        },
+                        {
+                            "name": "Aprovisionamiento de un recurso de Azure para la traducción de voz",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-speech-speech-service/2-speech-service"
+                        },
+                        {
+                            "name": "Traducción de voz a texto",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-speech-speech-service/3-translate-speech-text"
+                        },
+                        {
+                            "name": "Síntesis de traducciones",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-speech-speech-service/4-synthesize-translation"
+                        },
+                        {
+                            "name": "Ejercicio: Traducción de voz",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-speech-speech-service/5-exercise-translate-speech"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-speech-speech-service/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/translate-speech-speech-service/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Desarrollo de una aplicación de IA generativa habilitada para audio",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-audio-apps/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-audio-apps/1-introduction"
+                        },
+                        {
+                            "name": "Implementación de un modelo multimodal",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-audio-apps/2-deploy-multimodal-model"
+                        },
+                        {
+                            "name": "Desarrollo de una aplicación de chat basada en audio",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-audio-apps/3-develop-audio-chat-app"
+                        },
+                        {
+                            "name": "Ejercicio: Desarrollo de una aplicación de chat habilitada para audio",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-audio-apps/4-exercise"
+                        },
+                        {
+                            "name": "Evaluación del módulo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-audio-apps/5-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-audio-apps/6-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Desarrollo de soluciones de Computer Vision en Azure - Training",
+            "url": "https://learn.microsoft.com/es-es/training/paths/create-computer-vision-solutions-azure-ai",
+            "units": [
+                {
+                    "name": "Análisis de imágenes",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/analyze-images/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-images/1-introduction"
+                        },
+                        {
+                            "name": "Aprovisionamiento de un recurso de Azure AI Vision",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-images/2-provision-computer-vision-resource"
+                        },
+                        {
+                            "name": "Análisis de una imagen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-images/3-analyze-image"
+                        },
+                        {
+                            "name": "Ejercicio: Análisis de imágenes",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-images/5-exercise-computer-vision"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-images/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-images/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Leer texto en imágenes",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/read-text-images-documents-with-computer-vision-service/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/read-text-images-documents-with-computer-vision-service/1-introduction"
+                        },
+                        {
+                            "name": "Exploración de las opciones de Azure AI para leer texto",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/read-text-images-documents-with-computer-vision-service/2-options-read-text"
+                        },
+                        {
+                            "name": "Lectura de texto con Análisis de imágenes de Azure AI Vision",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/read-text-images-documents-with-computer-vision-service/4-use-read-api"
+                        },
+                        {
+                            "name": "Ejercicio: Lectura de texto en imágenes",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/read-text-images-documents-with-computer-vision-service/5-exercise"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/read-text-images-documents-with-computer-vision-service/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/read-text-images-documents-with-computer-vision-service/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Detección, análisis y reconocimiento de caras",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/detect-analyze-recognize-faces/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-analyze-recognize-faces/1-introduction"
+                        },
+                        {
+                            "name": "Planear una solución de detección, análisis o reconocimiento de caras",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-analyze-recognize-faces/2-understand-capabilities-of-face-service"
+                        },
+                        {
+                            "name": "Detección y análisis de caras",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-analyze-recognize-faces/3-detect-analyze-faces"
+                        },
+                        {
+                            "name": "Comprobación e identificación de caras",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-analyze-recognize-faces/4-compare-match-detected-faces"
+                        },
+                        {
+                            "name": "Consideraciones de inteligencia artificial responsable para soluciones basadas en caras",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-analyze-recognize-faces/5-understand-considerations-for-face-analysis"
+                        },
+                        {
+                            "name": "Ejercicio: Detección y análisis de caras",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-analyze-recognize-faces/8-exercise-identify-faces"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-analyze-recognize-faces/9-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-analyze-recognize-faces/10-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Clasificación de imágenes",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/classify-images/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/classify-images/1-introduction"
+                        },
+                        {
+                            "name": "Azure Inteligencia Artificial Visión Personalizada",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/classify-images/2-provision-azure-resources-for-custom-vision"
+                        },
+                        {
+                            "name": "Entrenamiento de un modelo de clasificación de imágenes",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/classify-images/3-understand-image-classification"
+                        },
+                        {
+                            "name": "Creación de una aplicación cliente de clasificación de imágenes",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/classify-images/4-use-trained-image-classifier"
+                        },
+                        {
+                            "name": "Ejercicio: Clasificación de imágenes",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/classify-images/5-exercise-custom-vision"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/classify-images/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/classify-images/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Detección de objetos en imágenes",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/detect-objects-images/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-objects-images/1-introduction"
+                        },
+                        {
+                            "name": "Uso de Custom Vision de Azure AI para la detección de objetos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-objects-images/2-understand-object-detection"
+                        },
+                        {
+                            "name": "Entrenamiento de un detector de objetos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-objects-images/3-train-object-detector"
+                        },
+                        {
+                            "name": "Desarrollo de una aplicación cliente de detección de objetos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-objects-images/4-use-trained-detector"
+                        },
+                        {
+                            "name": "Ejercicio: Detección de objetos en imágenes",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-objects-images/5-exercise-custom-vision"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-objects-images/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/detect-objects-images/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Análisis de vídeo",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/analyze-video/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-video/1-introduction"
+                        },
+                        {
+                            "name": "Descripción de las funcionalidades de Azure Video Indexer",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-video/2-understand-video-indexer-capabilities"
+                        },
+                        {
+                            "name": "Extracción de conclusiones personalizadas",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-video/3-extract-custom-insights"
+                        },
+                        {
+                            "name": "Uso de widgets y API de Video Analyzer",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-video/4-use-video-indexer-widgets-apis"
+                        },
+                        {
+                            "name": "Ejercicio: Análisis de vídeo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-video/5-exercise-video-indexer"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-video/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-video/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Desarrollo de una aplicación de IA generativa habilitada para la visión",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-vision-apps/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-vision-apps/1-introduction"
+                        },
+                        {
+                            "name": "Implementación de un modelo multimodal",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-vision-apps/2-deploy-multimodal-model"
+                        },
+                        {
+                            "name": "Desarrollo de una aplicación de chat basada en la visión",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-vision-apps/3-develop-visual-chat-app"
+                        },
+                        {
+                            "name": "Ejercicio: Desarrollar una aplicación de chat con capacidades visuales",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-vision-apps/4-exercise"
+                        },
+                        {
+                            "name": "Evaluación del módulo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-vision-apps/5-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/develop-generative-ai-vision-apps/6-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Generación de imágenes con IA",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/generate-images-azure-openai/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/generate-images-azure-openai/1-introduction"
+                        },
+                        {
+                            "name": "¿Qué son los modelos de generación de imágenes?",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/generate-images-azure-openai/2-what-is-dall-e"
+                        },
+                        {
+                            "name": "Exploración de modelos de generación de imágenes en el portal de Azure AI Foundry",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/generate-images-azure-openai/3-dall-e-in-openai-studio"
+                        },
+                        {
+                            "name": "Creación de una aplicación cliente que usa un modelo de generación de imágenes",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/generate-images-azure-openai/4-dall-e-rest-api"
+                        },
+                        {
+                            "name": "Ejercicio: Generación de imágenes con IA",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/generate-images-azure-openai/5-exercise-use-dall-e"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/generate-images-azure-openai/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/generate-images-azure-openai/7-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Desarrollo de soluciones de extracción de información de IA en Azure AI-3002 - Training",
+            "url": "https://learn.microsoft.com/es-es/training/paths/ai-extract-information",
+            "units": [
+                {
+                    "name": "Creación de una solución de análisis multimodal con Azure AI Content Understanding",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai/01-introduction"
+                        },
+                        {
+                            "name": "¿Qué es la Comprensión del contenidos de Azure AI?",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai/02-content-understanding"
+                        },
+                        {
+                            "name": "Crear un analizador de comprensión de contenidos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai/03-create-analyzer"
+                        },
+                        {
+                            "name": "Usar la API de REST de comprensión de contenidos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai/04-use-api"
+                        },
+                        {
+                            "name": "Ejercicio: Extracción de información del contenido multiplataforma",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai/05-exercise"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai/06-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai/07-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Creación de una aplicación cliente de Azure AI Content Understanding",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai-api/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai-api/01-introduction"
+                        },
+                        {
+                            "name": "Preparese para usar la REST API de AI Content Understanding",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai-api/02-prepare-content-understanding"
+                        },
+                        {
+                            "name": "Creación de un analizador de comprensión de contenidos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai-api/03-create-analyzer"
+                        },
+                        {
+                            "name": "Análisis de contenido",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai-api/04-analyze"
+                        },
+                        {
+                            "name": "Ejercicio: Desarrollo de una aplicación cliente de Content Understanding",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai-api/05-exercise"
+                        },
+                        {
+                            "name": "Evaluación del módulo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai-api/06-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/analyze-content-ai-api/07-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Uso de modelos de inteligencia de documentos creados previamente",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/use-prebuilt-form-recognizer-models/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/use-prebuilt-form-recognizer-models/1-introduction"
+                        },
+                        {
+                            "name": "Descripción de los modelos precompilados",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/use-prebuilt-form-recognizer-models/2-understand-prebuilt-models"
+                        },
+                        {
+                            "name": "Usar los modelos general de documento, lectura y diseño",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/use-prebuilt-form-recognizer-models/3-use-general-document-read-layout-models"
+                        },
+                        {
+                            "name": "Uso de modelos financieros, identificadores e impuestos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/use-prebuilt-form-recognizer-models/4-use-financial-id-tax-models"
+                        },
+                        {
+                            "name": "Ejercicio: Análisis de un documento mediante Azure AI Document Intelligence",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/use-prebuilt-form-recognizer-models/5-exercise-analyze-document-use-form-recognizer"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/use-prebuilt-form-recognizer-models/6-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/use-prebuilt-form-recognizer-models/7-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Extracción de datos de formularios con la inteligencia de documentos de Azure",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/work-form-recognizer/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/work-form-recognizer/1-introduction"
+                        },
+                        {
+                            "name": "¿Qué es Azure Document Intelligence?",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/work-form-recognizer/2-what-form-recognizer"
+                        },
+                        {
+                            "name": "Introducción a Azure Document Intelligence",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/work-form-recognizer/3-get-started"
+                        },
+                        {
+                            "name": "Entrenamiento de modelos personalizados",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/work-form-recognizer/6-train-custom-models"
+                        },
+                        {
+                            "name": "Uso de modelos de Azure Document Intelligence",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/work-form-recognizer/7-use-models"
+                        },
+                        {
+                            "name": "Uso de Azure Document Intelligence Studio",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/work-form-recognizer/9-form-recognizer-studio"
+                        },
+                        {
+                            "name": "Ejercicio: Extracción de datos de formularios personalizados",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/work-form-recognizer/8-exercise-extract-data-from-custom-forms"
+                        },
+                        {
+                            "name": "Evaluación de módulos",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/work-form-recognizer/10-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/work-form-recognizer/11-summary"
+                        }
+                    ]
+                },
+                {
+                    "name": "Creación de una solución de minería de conocimiento con Azure AI Search",
+                    "url": "https://learn.microsoft.com/es-es/training/modules/ai-knowldge-mining/",
+                    "topics": [
+                        {
+                            "name": "Introducción",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-knowldge-mining/1-introduction"
+                        },
+                        {
+                            "name": "¿Qué es Azure AI Search?",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-knowldge-mining/2-azure-ai-search"
+                        },
+                        {
+                            "name": "Extracción de datos con un indexador",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-knowldge-mining/3-index"
+                        },
+                        {
+                            "name": "Enriquecimiento de datos extraídos con aptitudes de inteligencia artificial",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-knowldge-mining/4-ai-skills"
+                        },
+                        {
+                            "name": "Búsqueda de un índice",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-knowldge-mining/5-search-index"
+                        },
+                        {
+                            "name": "Conservar información extraída en un almacén de conocimiento",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-knowldge-mining/6-knowledge-store"
+                        },
+                        {
+                            "name": "Ejercicio: Creación de una solución de minería de conocimiento",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-knowldge-mining/7-exercise"
+                        },
+                        {
+                            "name": "Evaluación del módulo",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-knowldge-mining/8-knowledge-check"
+                        },
+                        {
+                            "name": "Resumen",
+                            "url": "https://learn.microsoft.com/es-es/training/modules/ai-knowldge-mining/9-summary"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "TEST MODULE - Demo Update",
+            "url": "https://example.com/test",
+            "units": [
+                {
+                    "name": "Test Unit",
+                    "url": "https://example.com/test/unit",
+                    "topics": [
+                        {
+                            "name": "Test Topic",
+                            "url": "https://example.com/test/topic"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "last_updated": "2025-09-29T13:40:00.882486",
+        "source_url": "https://learn.microsoft.com/es-es/training/courses/ai-102t00",
+        "scraper_version": "enhanced_v2",
+        "total_modules": 6,
+        "working_modules": 6
+    }
+}
