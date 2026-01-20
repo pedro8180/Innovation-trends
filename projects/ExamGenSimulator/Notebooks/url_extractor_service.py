@@ -42,6 +42,7 @@ class UrlExtractor:
         }
 
         for module_url in modules_urls:
+            print(f"Module URL: {module_url}")#####
             module_params = {
                 'url': module_url,
                 'x-api-key': api_key,
@@ -59,6 +60,7 @@ class UrlExtractor:
             # Obtener el nombre del módulo desde la etiqueta meta[property="og:title"]
             title_tag = module_soup.find('meta', attrs={'property': 'og:title'})
             module_name = title_tag['content'].strip()  if title_tag else 'Módulo sin título'
+            print(f"Module name: {module_name}")
 
             module_units_urls = []
 
