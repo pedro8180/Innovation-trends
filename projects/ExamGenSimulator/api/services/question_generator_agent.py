@@ -1,5 +1,4 @@
-from langgraph.prebuilt import create_react_agent
-from typing import Optional, List
+from typing import Optional, List, Any
 from langchain_openai import AzureChatOpenAI
 from langchain_core.tools import BaseTool
 from utils.custom_prompts import CustomPrompts
@@ -8,10 +7,33 @@ from .tools import AgentTools
 from models.response import QuestionAgentResponse
 
 
+def _import_agent_helpers():
+    """Deferred imports for langchain-related helpers.
+
+    This avoids import-time failures when the installed langchain API
+    differs from the one expected at development time.
+    """
+    # Try the primary langchain import first, then fall back to langgraph
+    try:
+        from langchain.agents import create_agent
+    except Exception:
+        try:
+            from langgraph.prebuilt import create_agent
+        except Exception:
+            create_agent = None
+
+    try:
+        from langchain_core.tools import BaseTool
+    except Exception:
+        BaseTool = object
+
+    return create_agent, BaseTool
+
+
 def create_question_generator_agent(
     llm: Optional[AzureChatOpenAI] = None,
     prompt: Optional[str] = None,
-    tools: Optional[List[BaseTool]] = None
+    tools: Optional[List[Any]] = None
 ):
     """
     Create a question generator agent with optional dependency injection.
@@ -24,6 +46,14 @@ def create_question_generator_agent(
     Returns:
         A LangGraph agent instance
     """
+    # Deferred import of langchain helpers
+    create_agent_func, BaseTool = _import_agent_helpers()
+
+    if create_agent_func is None:
+        raise ImportError(
+            "No compatible `create_agent` factory found. Install a supported langchain/langgraph package or adapt the factory."
+        )
+
     # Use provided or default dependencies
     if llm is None:
         llm = Utils.get_llm()
@@ -32,12 +62,12 @@ def create_question_generator_agent(
     if tools is None:
         tools = [AgentTools.rag_tool]
 
-    agent = create_react_agent(
+    agent = create_agent_func(
         model=llm,
         response_format=QuestionAgentResponse,
         tools=tools,
         name="questions_generator_agent",
-        prompt=prompt
+        system_prompt=prompt
     )
     return agent
 

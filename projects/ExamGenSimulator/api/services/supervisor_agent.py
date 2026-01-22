@@ -21,24 +21,30 @@ def create_supervisor_agent(
     """
     if llm is None:
         llm = Utils.get_llm()
-    
+
+    # Try to create the question generation agent, but tolerate failures
+    # If the langchain API changed or the helper cannot be imported, we
+    # will proceed without the sub-agent and fall back to the LLM.
     if question_gen_agent is None:
-        question_gen_agent = create_question_generator_agent(llm=llm)
+        try:
+            question_gen_agent = create_question_generator_agent(llm=llm)
+        except Exception as e:
+            print(f"Warning: failed to create question generator agent: {e}")
+            question_gen_agent = None
+
+    agents = [question_gen_agent] if question_gen_agent else []
+
+    prompt_text = (
+        "You're a supervisor agent that handles other agents. "
+        "Your job is to understand the user query and, when available, delegate to sub-agents. "
+        "If no sub-agent is available, provide a helpful, concise response using your LLM knowledge."
+    )
 
     workflow = create_supervisor(
-        agents=[question_gen_agent],
+        agents=agents,
         model=llm,
         output_mode='last_message',
-        prompt=(
-            "You're a supervisor agent that handles other agents. "
-            "Your job is to understand user query and handoff to the right sub agent for doing the job. "
-            "Here is the list of agents: question_gen_agent. "
-            "For any query related to: "
-            "- Generate practice exam "
-            "- Generate practice questions "
-            "Please handoff to the question_gen_agent. "
-            "Before returning your final answer, use the output from your sub agents to construct your final response."
-        )
+        prompt=prompt_text
     )
 
     app = workflow.compile(name="supervisor_agent")

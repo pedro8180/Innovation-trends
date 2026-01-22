@@ -1,5 +1,8 @@
 /* Avanade Color Palette */
 :root {
+
+  --sidebar-width: 320px;
+
   /* Primary Colors */
   --avanade-orange: #FF6600;
   --avanade-dark-orange: #E55A00;

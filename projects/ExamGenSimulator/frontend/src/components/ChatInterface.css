@@ -1,7 +1,17 @@
 .chat-interface {
-  max-width: 800px;
-  margin: 0 auto;
-  height: 600px;
+  max-width: none;
+  /* FULL-SCREEN (temporarily ignore sidebar) */
+  width: 92vw;
+  max-width: 100vw;
+  margin-left: 0; /* flush to left edge */
+  --left-gap: 122px; /* adjust if there's an existing left gutter */
+  --top-offset: -3px; /* vertical shift: moves interface up (adjust as needed) */
+    transform: translateX(calc(-1 * var(--left-gap))) translateY(calc(-1 * var(--top-offset)));
+    box-sizing: border-box;
+    /* Use available viewport height minus footer to grow vertically without causing page scroll
+      Keep internal scrolling confined to .chat-messages */
+    height: 79vh;
+    overflow-x: hidden;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -365,9 +375,11 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .chat-interface {
-    height: 70vh;
+    height: calc(100vh - 62px - 16px);
     margin: 0;
+    margin-left: 0; /* remove left offset on small screens */
     border-radius: 0;
+    overflow-x: hidden;
   }
   
   .chat-header {

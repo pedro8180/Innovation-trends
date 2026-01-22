@@ -152,6 +152,17 @@ class AdvancedQuizGenerator:
     
     def generate_ultra_optimized_questions(self, topic: str, num_questions: int = 5, module_number: int = 1) -> Dict:
         """Generate ultra-optimized questions with advanced consistency"""
+        # Enforce maximum number of questions
+        MAX_QUESTIONS = 50
+        if num_questions > MAX_QUESTIONS:
+            return {
+                'success': False,
+                'limit_exceeded': True,
+                'requested': num_questions,
+                'max_allowed': MAX_QUESTIONS,
+                'error': f'Requested {num_questions} questions, maximum allowed is {MAX_QUESTIONS}.',
+                'message': f'You requested {num_questions} questions but the maximum allowed is {MAX_QUESTIONS}. Would you like to continue with {MAX_QUESTIONS} questions or change the requested amount?'
+            }
         course_data = self.load_course_data()
         
         # Get module-specific content
