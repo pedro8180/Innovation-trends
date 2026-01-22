@@ -164,28 +164,21 @@ class UrlExtractor:
         course_data = {"course": course_name, "modules": []}
 
         for module_url in modules_urls:
-<<<<<<< HEAD:projects/ExamGenSimulator/Notebooks/url_extractor_service.py
             print(f"Module URL: {module_url}")#####
             module_params = {
                 'url': module_url,
                 'x-api-key': api_key,
                 'browser': False
             }
-=======
-            # Fetch module HTML
-            module_soup = self.get_html(module_url)
->>>>>>> e0f5f5ea50205b17de20e31fb8c715d22c0e5bbe:projects/ExamGenSimulator/api/services/url_extractor_service.py
 
-            # Extract module title
-            module_name = self.get_title(module_url, module_soup)
+            module_response = requests.get(endpoint, params=module_params, headers=headers)
+            if module_response.status_code != 200:
+                print(f"Error al hacer scraping del módulo: {module_url}")
+                continue
 
-            #Extract unit URLs
-            unit_urls = self.extract_unit_urls(module_name, module_soup)
+            module_soup = BeautifulSoup(module_response.text, 'html.parser')
 
-            # Extract unit data
-            units = [self.extract_data_from_unit(unit_url) for unit_url in unit_urls]
 
-<<<<<<< HEAD:projects/ExamGenSimulator/Notebooks/url_extractor_service.py
             # Obtener el nombre del módulo desde la etiqueta meta[property="og:title"]
             title_tag = module_soup.find('meta', attrs={'property': 'og:title'})
             module_name = title_tag['content'].strip()  if title_tag else 'Módulo sin título'
@@ -241,12 +234,6 @@ class UrlExtractor:
                 'name': module_name,
                 'url': module_url,
                 'units': units
-=======
-            course_data["modules"].append({
-                "name": module_name,
-                "url": module_url,
-                "units": units
->>>>>>> e0f5f5ea50205b17de20e31fb8c715d22c0e5bbe:projects/ExamGenSimulator/api/services/url_extractor_service.py
             })
 
         # Convert dict to JSON string
