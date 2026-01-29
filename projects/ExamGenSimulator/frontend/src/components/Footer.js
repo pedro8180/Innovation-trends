@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <p className="footer-text">
-            Made with <Heart size={16} className="heart-icon" /> using Avanade design system
+            Made with <Heart size={13} className="heart-icon" /> using Avanade design system
           </p>
           <p className="footer-year">
             © 2025 Exam Generator Simulator

@@ -60,8 +60,25 @@ async def call_agent(request: Query):
                     num_questions=num_questions,
                     module_number=module_number
                 )
-                
-                if quiz_result['success'] and quiz_result['questions']:
+
+                # Handle client-side limit exceeded responses
+                if quiz_result.get('limit_exceeded'):
+                    response_payload = {
+                        "type": "limit_exceeded",
+                        "message": quiz_result.get('message'),
+                        "requested": quiz_result.get('requested'),
+                        "max_allowed": quiz_result.get('max_allowed')
+                    }
+
+                    if getattr(request, 'chat_id', None):
+                        try:
+                            chat_store.add_message(request.chat_id, 'assistant', json.dumps(response_payload))
+                        except Exception:
+                            print('Warning: failed to persist assistant message')
+
+                    return JSONResponse(content=response_payload)
+
+                if quiz_result.get('success') and quiz_result.get('questions'):
                     # Debug log first question's explanation
                     if quiz_result['questions']:
                         first_q = quiz_result['questions'][0]
@@ -109,27 +126,52 @@ async def call_agent(request: Query):
 
 async def use_supervisor_agent(request: Query):
     """Fallback to use the supervisor agent"""
-    
-    agent = SupervisorAgent.create_supervisor_agent()
-    messages = {"messages": [{"role":"user", "content": request.query}]}
-    response = agent.invoke(messages)
-    
-    # Parse text response if it contains quiz questions
-    content = response['messages'][-1].content
-    print(f"Supervisor Agent Response: {content}")
-    parsed_questions = parse_questions_from_text(content)
-    
-    if parsed_questions:
-        return {
-            "type": "quiz", 
-            "questions": parsed_questions,
-            "total_questions": len(parsed_questions),
-            "module_number": 2,
-            "module_name": "AI-102 Practice Questions"
-        }
-    
-    # Return as regular text response
-    return content
+    try:
+        agent = SupervisorAgent.create_supervisor_agent()
+        messages = {"messages": [{"role": "user", "content": request.query}]}
+        response = agent.invoke(messages)
+
+        # Parse text response if it contains quiz questions
+        content = response['messages'][-1].content
+        print(f"Supervisor Agent Response: {content}")
+        parsed_questions = parse_questions_from_text(content)
+
+        if parsed_questions:
+            return {
+                "type": "quiz",
+                "questions": parsed_questions,
+                "total_questions": len(parsed_questions),
+                "module_number": 2,
+                "module_name": "AI-102 Practice Questions"
+            }
+
+        # Return as regular text response
+        return content
+    except Exception as e:
+        # Fallback: use LLM directly to produce a simple text response
+        try:
+            llm = Utils.get_llm()
+            llm_messages = {"messages": [{"role": "user", "content": request.query}]}
+            llm_response = llm.invoke(llm_messages)
+            # If invoke returns object with content, try to extract
+            if isinstance(llm_response, dict) and llm_response.get('content'):
+                content = llm_response.get('content')
+            else:
+                # Some clients return an object with .content
+                content = getattr(llm_response, 'content', str(llm_response))
+            parsed_questions = parse_questions_from_text(content)
+            if parsed_questions:
+                return {
+                    "type": "quiz",
+                    "questions": parsed_questions,
+                    "total_questions": len(parsed_questions),
+                    "module_number": 2,
+                    "module_name": "AI-102 Practice Questions"
+                }
+            return content
+        except Exception as inner_e:
+            print(f"Supervisor fallback error: {inner_e}")
+            raise
 
 
 @router.post('/agents/chats')

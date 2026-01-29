@@ -47,7 +47,21 @@ const ChatInterface = ({ messages, setMessages, isLoading, setIsLoading, current
         content: response,
         timestamp: new Date()
       };
+      
+      // Handle structured limit-exceeded responses from backend
+      if (typeof response === 'object' && response.type === 'limit_exceeded') {
+        botMessage = {
+          ...botMessage,
+          type: 'limit_exceeded',
+          message: response.message,
+          requested: response.requested,
+          max_allowed: response.max_allowed
+        };
 
+        setMessages(prev => [...prev, botMessage]);
+        setIsLoading(false);
+        return;
+      }
       // Check if response is a structured response
       if (typeof response === 'object' && response.type) {
         if (response.type === 'quiz') {
@@ -757,6 +771,87 @@ Brief documentation reference where they can learn more about this topic.`;
                       })();
                     }}
                   />
+                </div>
+              </div>
+            );
+          }
+
+          if (message.type === 'limit_exceeded') {
+            return (
+              <div key={message.id} className="message bot-message">
+                <div className="message-avatar">
+                  <Bot size={16} />
+                </div>
+                <div className="message-content">
+                  <div className="message-text">
+                    <p>{message.message || message.content}</p>
+                    <div className="limit-actions">
+                      <button
+                        className="btn primary"
+                        onClick={async () => {
+                          // Send a new request continuing with max_allowed questions
+                          const continueMsg = {
+                            id: Date.now(),
+                            type: 'user',
+                            content: `Please generate ${message.max_allowed} practice questions for Module ${message.requested ? 1 : 1} in English.`,
+                            timestamp: new Date()
+                          };
+                          setMessages(prev => [...prev, continueMsg]);
+                          setIsLoading(true);
+                          try {
+                            const resp = await apiService.sendQueryWithChat(continueMsg.content, currentChatId);
+                            const botResp = {
+                              id: Date.now() + 1,
+                              type: typeof resp === 'object' && resp.type ? resp.type : 'bot',
+                              content: resp,
+                              timestamp: new Date()
+                            };
+                            setMessages(prev => [...prev, botResp]);
+                          } catch (err) {
+                            console.error('Error continuing with max questions', err);
+                          } finally {
+                            setIsLoading(false);
+                          }
+                        }}
+                      >
+                        Continue with {message.max_allowed}
+                      </button>
+
+                      <button
+                        className="btn"
+                        onClick={async () => {
+                          const newAmount = prompt('Enter the number of questions you want (max 50):');
+                          const parsed = parseInt(newAmount, 10);
+                          if (!parsed || parsed < 1) return;
+                          const adjusted = Math.min(parsed, 50);
+                          const changeMsg = {
+                            id: Date.now(),
+                            type: 'user',
+                            content: `Please generate ${adjusted} practice questions for Module 1 in English.`,
+                            timestamp: new Date()
+                          };
+                          setMessages(prev => [...prev, changeMsg]);
+                          setIsLoading(true);
+                          try {
+                            const resp = await apiService.sendQueryWithChat(changeMsg.content, currentChatId);
+                            const botResp = {
+                              id: Date.now() + 1,
+                              type: typeof resp === 'object' && resp.type ? resp.type : 'bot',
+                              content: resp,
+                              timestamp: new Date()
+                            };
+                            setMessages(prev => [...prev, botResp]);
+                          } catch (err) {
+                            console.error('Error requesting changed amount', err);
+                          } finally {
+                            setIsLoading(false);
+                          }
+                        }}
+                      >
+                        Change amount
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             );
