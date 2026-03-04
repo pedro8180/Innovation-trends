@@ -18,12 +18,30 @@
 .main-content {
   flex: 1;
   padding: 2rem 0;
+  display: flex;
+  justify-content: center; /* center the inner container horizontally */
+  align-items: flex-start;
 }
 
 .welcome-section {
   text-align: center;
   margin-bottom: 3rem;
   padding: 2rem 0;
+}
+
+/* Centering container that holds the chat area */
+.container {
+  width: 100%;
+  max-width: 1400px; /* overall page max width (increased) */
+  padding: 0 1rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center; /* keep chat centered inside container */
+}
+
+/* Optional right-side placeholder if you later add widgets */
+.right-side {
+  width: 320px;
 }
 
 .welcome-title {
